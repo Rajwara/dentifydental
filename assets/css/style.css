@@ -1089,3 +1089,4 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
   .svc-hero-media--banner .svc-float strong { font-size: 14px; }
   .svc-hero-media--banner .svc-float-ico { width: 34px; height: 34px; border-radius: 10px; font-size: 15px; }
 }
+@media (hover: none) { .service-card img { height: 160px; opacity: 1; } } /* touch screens can't hover, so always show the card photo */
