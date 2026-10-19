@@ -311,9 +311,9 @@ $$('.newsletter-form').forEach((form) => {
     $$('.plan-price .amt').forEach((el) => {
       const to = +el.dataset[key];
       if (hasGsap) {
-        const obj = { v: +el.textContent };
-        gsap.to(obj, { v: to, duration: 0.6, ease: 'power2.out', onUpdate: () => (el.textContent = Math.round(obj.v)) });
-      } else el.textContent = to;
+        const obj = { v: +el.textContent.replace(/,/g, '') };
+        gsap.to(obj, { v: to, duration: 0.6, ease: 'power2.out', onUpdate: () => (el.textContent = Math.round(obj.v).toLocaleString('en-US')) });
+      } else el.textContent = to.toLocaleString('en-US');
     });
     $$('.plan-price .per').forEach((el) => (el.textContent = el.dataset[key]));
   };

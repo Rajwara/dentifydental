@@ -1090,3 +1090,18 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
   .svc-hero-media--banner .svc-float-ico { width: 34px; height: 34px; border-radius: 10px; font-size: 15px; }
 }
 @media (hover: none) { .service-card img { height: 160px; opacity: 1; } } /* touch screens can't hover, so always show the card photo */
+
+/* Pricing page: full treatment list in 2 columns, group numbers and taglines */
+.price-list--full { grid-template-columns: repeat(2, 1fr); align-items: start; }
+.price-num { justify-self: start; padding: 4px 10px; border-radius: var(--pill); background: var(--teal); color: var(--lime); font-size: 12px; margin-bottom: 6px; }
+.price-tag { margin: -8px 0 10px; font-size: 15px; }
+.price-list--full .price-row { border-bottom: 1px solid var(--teal-10); }
+.price-list--full .price-row:last-child { border-bottom: 0; }
+.price-list--full .price-row > span:first-child { max-width: 68%; }
+.price-badges { margin-top: 4px; }
+.plan-worth { font-size: 14px; opacity: .7; margin-top: -8px; }
+@media (max-width: 767px) { .price-list--full { grid-template-columns: 1fr; } .price-list--full .price-row > span:first-child { max-width: 62%; } }
+.plan-price { flex-wrap: nowrap; }
+.plan-price .amt { font-size: clamp(56px, 5.2vw, 84px); }
+.plan-price .per { white-space: nowrap; }
+@media (max-width: 767px) { .plan-price .amt { font-size: 64px; } }
