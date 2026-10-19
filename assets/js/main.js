@@ -511,3 +511,22 @@ $$('.has-drop').forEach((wrap) => {
     .to(labels, { opacity: 1, x: 0, duration: 0.5, stagger: 0.12, ease: 'power2.out' }, '-=0.4')
     .add(() => $$('.anat-thin', fig).forEach((p) => gsap.set(p, { strokeDasharray: '4 5' })));
 })();
+
+/* ===== Teeth-straightening demo: crooked teeth line up as you scroll ===== */
+(() => {
+  const demo = $('[data-ortho]');
+  if (!demo) return;
+  const teeth = $$('.ortho-tooth', demo);
+  const label = $('[data-ortho-label]', demo);
+  const bar = $('[data-ortho-bar]', demo);
+  const stages = ['Start', 'Month 3', 'Month 6', 'Month 9', 'Done'];
+  if (!animate) { bar.style.transform = 'scaleX(1)'; label.textContent = 'Done'; return; }
+  teeth.forEach((t) => gsap.set(t, { rotation: +t.dataset.rot, y: +t.dataset.dy, x: +t.dataset.dx, transformOrigin: '50% 50%' }));
+  const tl = gsap.timeline({
+    scrollTrigger: { trigger: demo, start: 'top 75%', end: 'bottom 35%', scrub: 0.6 },
+    onUpdate: () => { label.textContent = stages[Math.min(stages.length - 1, Math.floor(tl.progress() * (stages.length - 1) + 0.05))]; },
+  });
+  tl
+    .to(teeth, { rotation: 0, x: 0, y: 0, ease: 'power1.inOut', stagger: 0.04 }, 0)
+    .to(bar, { scaleX: 1, ease: 'none', duration: 1 + 0.04 * (teeth.length - 1) }, 0);
+})();

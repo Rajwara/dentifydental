@@ -25,7 +25,8 @@ clinic-website/
 └── assets/
     ├── css/style.css   ← all styling, linked in every page
     ├── js/main.js      ← all animations & interactions, linked in every page
-    └── images/         ← put your images here
+    └── images/         ← one folder per page (home/, about/, service-orthodontics/ …) + shared/
+                          each folder's README.md lists the photos that page needs
 ```
 
 Menu: Home · About · Services (mega menu, 9 services + All services) · Doctors · Blog · Contact · Pages (dropdown listing every page).
@@ -34,7 +35,7 @@ Menu: Home · About · Services (mega menu, 9 services + All services) · Doctor
 Search the project for `[FILL` to find every spot that needs real clinic information (doctor names & qualifications, treatment prices in PKR, membership plan amounts, Google rating, patient reviews, clinic history, payment methods). Also confirm the counters on the home and about pages (years, patients, specialists, % recommend).
 
 ## Swapping content
-- **Images:** replace every `https://placehold.co/...` URL with your image path, e.g. `assets/images/hero.jpg`.
+- **Images:** drop photos into `assets/images/<page>/` using the file names in that folder's README.md, then replace the matching `https://placehold.co/...` URL with the path, e.g. `assets/images/home/hero.jpg`.
 - **Clinic name, phone, address, hours:** search for `Clinic Name`, `(000) 000-0000`, `Street address`, `hello@example.com`.
 - **Colors:** edit the variables at the top of `assets/css/style.css` (`--teal`, `--lime`, `--cream`).
 - **Menu and footer** are the same on every page — if you change one, change it in all pages.
