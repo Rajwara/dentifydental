@@ -70,8 +70,8 @@
             <div class="chips"><span class="chip">Every 6 months</span><span class="chip">Digital X-rays</span><span class="chip">All ages</span><span class="chip">From Rs. [FILL]</span></div>
           </div>
         </div>
-        <div class="page-hero-media svc-hero-media">
-          <img data-parallax src="https://placehold.co/1800x900/265C5C/CEEA73?text=Preventive+Dental+Care" alt="Dentist examining a smiling patient at Dentify Dental">
+        <div class="page-hero-media svc-hero-media svc-hero-media--banner">
+          <img data-parallax src="assets/images/service-preventive-dental-care/hero.webp" width="2172" height="724" alt="Dentist examining a smiling patient at Dentify Dental">
           <div class="svc-float" aria-hidden="true">
             <span class="svc-float-ico">✦</span>
             <span><strong>Prevention first</strong><small>Catch small issues before they grow</small></span>
@@ -248,6 +248,44 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============ NEWSLETTER POPUP (opens after 30% scroll) ============ -->
+  <div class="nl-pop" id="nlPop" role="dialog" aria-modal="true" aria-labelledby="nlPopTitle" hidden>
+    <div class="nl-pop-backdrop" data-nl-close></div>
+    <div class="nl-pop-panel">
+      <button class="nl-pop-close" type="button" data-nl-close aria-label="Close newsletter sign-up">×</button>
+      <svg class="nl-arc-top" viewBox="0 0 900 420" aria-hidden="true"><path d="M80 -20C390 40 610 145 820 380"/></svg>
+      <svg class="nl-wave" viewBox="0 0 1600 360" preserveAspectRatio="none" aria-hidden="true"><path class="nl-wave-a" d="M-30 205C265 420 610 350 850 255C1080 164 1275 85 1630 138"/><path class="nl-wave-b" d="M-25 225C300 430 610 390 875 270C1135 150 1325 112 1625 152"/></svg>
+
+      <div class="nl-pop-copy">
+        <span class="nl-eyebrow">Stay connected</span>
+        <h2 class="nl-title" id="nlPopTitle"><span class="line"><span>Join Our</span></span><span class="line"><span class="nl-gold">Newsletter</span></span></h2>
+        <p class="nl-lead">Get expert dental tips, oral health advice, clinic updates and exclusive insights, straight to your inbox.</p>
+        <form class="nl-pop-form" novalidate>
+          <div class="nl-pop-row">
+            <img class="nl-pop-mailicon" src="assets/images/newsletter/email_icon.svg" alt="" width="24" height="24">
+            <label class="sr-only" for="nlPopEmail">Email address</label>
+            <input id="nlPopEmail" type="email" name="email" placeholder="Enter your email address" autocomplete="email" required>
+            <button class="nl-pop-btn" type="submit"><span>Subscribe</span><img src="assets/images/newsletter/arrow_right_icon.svg" alt="" width="20" height="20"></button>
+          </div>
+          <p class="nl-pop-err" role="alert" hidden>Please enter a valid email address.</p>
+          <p class="nl-pop-ok" role="status" hidden>Thank you! You're on the list. Look out for our next dental tips email.</p>
+        </form>
+        <ul class="nl-features">
+          <li><span class="nl-feat-ico"><img src="assets/images/newsletter/tooth_icon.svg" alt="" width="30" height="30"></span><span>Oral Health<br> Tips</span></li>
+          <li><span class="nl-feat-ico"><img src="assets/images/newsletter/document_icon.svg" alt="" width="30" height="30"></span><span>Latest Clinic<br> Updates</span></li>
+          <li><span class="nl-feat-ico"><img src="assets/images/newsletter/star_icon.svg" alt="" width="30" height="30"></span><span>Exclusive<br> Insights</span></li>
+        </ul>
+      </div>
+
+      <div class="nl-pop-art" aria-hidden="true">
+        <svg class="nl-plane-trail" viewBox="0 0 220 200"><path d="M30 190C-5 120 40 60 110 70C150 76 170 40 205 18"/></svg>
+        <img class="nl-plane" src="assets/images/newsletter/paper_plane_icon.svg" alt="">
+        <img class="nl-woman" src="assets/images/newsletter/woman_cutout_transparent.png" alt="">
+        <img class="nl-mail" src="assets/images/newsletter/mail_graphic_cluster_transparent.png" alt="">
+      </div>
+    </div>
+  </div>
 
   <a href="https://api.whatsapp.com/send/?phone=923257766667&amp;text&amp;type=phone_number&amp;app_absent=0" class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
     <span class="wa-float-tip">Chat with us</span>

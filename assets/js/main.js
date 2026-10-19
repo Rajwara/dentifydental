@@ -600,3 +600,108 @@ $$('.has-drop').forEach((wrap) => {
   input.addEventListener('input', () => show(+input.value));
   show(0);
 })();
+
+/* ===== Newsletter popup: opens once the visitor scrolls 30% of the page ===== */
+(() => {
+  const pop = $('#nlPop');
+  if (!pop) return;
+  const KEY = 'ddNewsletter';
+  const SNOOZE_DAYS = 7; // after closing, wait this long before showing again
+  const read = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } };
+  const save = (state) => { try { localStorage.setItem(KEY, JSON.stringify({ state, t: Date.now() })); } catch (e) { /* storage unavailable */ } };
+  const saved = read();
+  const forced = /[?&]newsletter\b/.test(location.search); // add ?newsletter to a URL to preview it
+  const snoozed = saved.state === 'dismissed' && Date.now() - saved.t < SNOOZE_DAYS * 864e5;
+  if (!forced && (saved.state === 'subscribed' || snoozed)) return;
+
+  const panel = $('.nl-pop-panel', pop);
+  const form = $('.nl-pop-form', pop);
+  const input = $('input', form);
+  let lastFocus = null;
+  let loops = [];
+  let isOpen = false;
+
+  const drawIn = (paths, duration, delay) => paths.forEach((p) => {
+    const len = p.getTotalLength();
+    gsap.fromTo(p, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration, delay, ease: 'power2.inOut' });
+  });
+
+  function open() {
+    if (isOpen) return;
+    isOpen = true;
+    lastFocus = document.activeElement;
+    pop.hidden = false;
+    document.body.classList.add('nl-open');
+    lockScroll(true);
+    $('.nl-pop-close', pop).focus({ preventScroll: true });
+    if (!animate) return;
+
+    const art = (s) => $(s, pop);
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    tl.fromTo(art('.nl-pop-backdrop'), { opacity: 0 }, { opacity: 1, duration: 0.4 })
+      .fromTo(panel, { opacity: 0, y: 60, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.8 }, 0.05)
+      .fromTo(art('.nl-woman'), { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 1.1 }, 0.35)
+      .fromTo(art('.nl-eyebrow'), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.6 }, 0.45)
+      .fromTo($$('.nl-title .line > span', pop), { yPercent: 110 }, { yPercent: 0, duration: 0.9, stagger: 0.12 }, 0.5)
+      .fromTo([art('.nl-lead'), art('.nl-pop-row')], { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, stagger: 0.12 }, 0.75)
+      .fromTo($$('.nl-features li', pop), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 }, 1)
+      .fromTo($$('.nl-feat-ico', pop), { scale: 0.4 }, { scale: 1, duration: 0.6, ease: 'back.out(2.5)', stagger: 0.1 }, 1.05)
+      .fromTo(art('.nl-mail'), { opacity: 0, y: 70, rotation: -8, scale: 0.8 }, { opacity: 1, y: 0, rotation: 0, scale: 1, duration: 1, ease: 'back.out(1.6)' }, 0.6)
+      .fromTo(art('.nl-plane'), { opacity: 0, x: -150, y: 170, rotation: -30, scale: 0.5 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 1.3, ease: 'power2.out' }, 1.1);
+    drawIn($$('.nl-arc-top path, .nl-wave path', pop), 1.6, 0.3);
+    drawIn([art('.nl-plane-trail path')], 1.2, 1.1);
+    tl.add(() => { // gentle idle motion after the entrance
+      loops = [
+        gsap.to(art('.nl-mail'), { y: -12, duration: 2.6, ease: 'sine.inOut', yoyo: true, repeat: -1 }),
+        gsap.to(art('.nl-plane'), { y: -8, rotation: 4, duration: 1.8, ease: 'sine.inOut', yoyo: true, repeat: -1 }),
+      ];
+      $$('.nl-plane-trail path', pop).forEach((p) => gsap.set(p, { strokeDasharray: '5 6', strokeDashoffset: 0 }));
+    });
+  }
+
+  function close(state = 'dismissed') {
+    if (!isOpen) return;
+    isOpen = false;
+    save(state);
+    const done = () => {
+      pop.hidden = true;
+      document.body.classList.remove('nl-open');
+      lockScroll(false);
+      loops.forEach((l) => l.kill());
+      if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    };
+    if (!animate) return done();
+    gsap.to(panel, { opacity: 0, y: 30, scale: 0.96, duration: 0.35, ease: 'power2.in' });
+    gsap.to($('.nl-pop-backdrop', pop), { opacity: 0, duration: 0.35, delay: 0.1, onComplete: done });
+  }
+
+  $$('[data-nl-close]', pop).forEach((el) => el.addEventListener('click', () => close()));
+  pop.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') return close();
+    if (e.key !== 'Tab') return;
+    const items = $$('button, input, a[href]', panel).filter((el) => !el.closest('[hidden]'));
+    const first = items[0], last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  // Front-end only: connect this to your email service (Mailchimp, Brevo, etc.)
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const ok = input.checkValidity() && input.value.trim();
+    $('.nl-pop-row', form).classList.toggle('has-error', !ok);
+    $('.nl-pop-err', form).hidden = !!ok;
+    if (!ok) return input.focus();
+    $('.nl-pop-row', form).hidden = true;
+    $('.nl-pop-ok', form).hidden = false;
+    if (animate) gsap.from($('.nl-pop-ok', form), { opacity: 0, y: 10, duration: 0.5 });
+    setTimeout(() => close('subscribed'), 2600);
+  });
+
+  if (forced) return open();
+  const check = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    if (max > 0 && scrollY / max >= 0.3) { window.removeEventListener('scroll', check); open(); }
+  };
+  window.addEventListener('scroll', check, { passive: true });
+})();

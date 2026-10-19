@@ -89,6 +89,44 @@
     </div>
   </footer>
 
+  <!-- ============ NEWSLETTER POPUP (opens after 30% scroll) ============ -->
+  <div class="nl-pop" id="nlPop" role="dialog" aria-modal="true" aria-labelledby="nlPopTitle" hidden>
+    <div class="nl-pop-backdrop" data-nl-close></div>
+    <div class="nl-pop-panel">
+      <button class="nl-pop-close" type="button" data-nl-close aria-label="Close newsletter sign-up">×</button>
+      <svg class="nl-arc-top" viewBox="0 0 900 420" aria-hidden="true"><path d="M80 -20C390 40 610 145 820 380"/></svg>
+      <svg class="nl-wave" viewBox="0 0 1600 360" preserveAspectRatio="none" aria-hidden="true"><path class="nl-wave-a" d="M-30 205C265 420 610 350 850 255C1080 164 1275 85 1630 138"/><path class="nl-wave-b" d="M-25 225C300 430 610 390 875 270C1135 150 1325 112 1625 152"/></svg>
+
+      <div class="nl-pop-copy">
+        <span class="nl-eyebrow">Stay connected</span>
+        <h2 class="nl-title" id="nlPopTitle"><span class="line"><span>Join Our</span></span><span class="line"><span class="nl-gold">Newsletter</span></span></h2>
+        <p class="nl-lead">Get expert dental tips, oral health advice, clinic updates and exclusive insights, straight to your inbox.</p>
+        <form class="nl-pop-form" novalidate>
+          <div class="nl-pop-row">
+            <img class="nl-pop-mailicon" src="assets/images/newsletter/email_icon.svg" alt="" width="24" height="24">
+            <label class="sr-only" for="nlPopEmail">Email address</label>
+            <input id="nlPopEmail" type="email" name="email" placeholder="Enter your email address" autocomplete="email" required>
+            <button class="nl-pop-btn" type="submit"><span>Subscribe</span><img src="assets/images/newsletter/arrow_right_icon.svg" alt="" width="20" height="20"></button>
+          </div>
+          <p class="nl-pop-err" role="alert" hidden>Please enter a valid email address.</p>
+          <p class="nl-pop-ok" role="status" hidden>Thank you! You're on the list. Look out for our next dental tips email.</p>
+        </form>
+        <ul class="nl-features">
+          <li><span class="nl-feat-ico"><img src="assets/images/newsletter/tooth_icon.svg" alt="" width="30" height="30"></span><span>Oral Health<br> Tips</span></li>
+          <li><span class="nl-feat-ico"><img src="assets/images/newsletter/document_icon.svg" alt="" width="30" height="30"></span><span>Latest Clinic<br> Updates</span></li>
+          <li><span class="nl-feat-ico"><img src="assets/images/newsletter/star_icon.svg" alt="" width="30" height="30"></span><span>Exclusive<br> Insights</span></li>
+        </ul>
+      </div>
+
+      <div class="nl-pop-art" aria-hidden="true">
+        <svg class="nl-plane-trail" viewBox="0 0 220 200"><path d="M30 190C-5 120 40 60 110 70C150 76 170 40 205 18"/></svg>
+        <img class="nl-plane" src="assets/images/newsletter/paper_plane_icon.svg" alt="">
+        <img class="nl-woman" src="assets/images/newsletter/woman_cutout_transparent.png" alt="">
+        <img class="nl-mail" src="assets/images/newsletter/mail_graphic_cluster_transparent.png" alt="">
+      </div>
+    </div>
+  </div>
+
   <a href="https://api.whatsapp.com/send/?phone=923257766667&amp;text&amp;type=phone_number&amp;app_absent=0" class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
     <span class="wa-float-tip">Chat with us</span>
     <span class="wa-float-btn"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36a9.42 9.42 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44 2.52 0 4.89.99 6.67 2.77a9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.43-9.45 9.43zm8.04-17.47A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.6 23.3l5.7-1.5a11.33 11.33 0 0 0 5.75 1.47h.01c6.26 0 11.36-5.1 11.37-11.36 0-3.04-1.18-5.89-3.33-8.04z"/></svg></span>

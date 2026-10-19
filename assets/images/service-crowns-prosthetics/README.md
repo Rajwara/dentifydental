@@ -2,6 +2,8 @@
 
 Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
 
+**Already in use:** `hero.webp` (top-of-page banner).
+
 | Suggested file name | Size (px) | Placeholder label | Description |
 |---|---|---|---|
 | `zirconia-crown.jpg` | 900 × 1100 | Zirconia Crown | Dentist discussing a zirconia crown with a patient |
