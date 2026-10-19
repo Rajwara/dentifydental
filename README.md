@@ -30,6 +30,9 @@ clinic-website/
 
 Menu: Home · About · Services (mega menu, 9 services + All services) · Doctors · Blog · Contact · Pages (dropdown listing every page).
 
+## Still to fill in
+Search the project for `[FILL` to find every spot that needs real clinic information (doctor names & qualifications, treatment prices in PKR, membership plan amounts, Google rating, patient reviews, clinic history, payment methods). Also confirm the counters on the home and about pages (years, patients, specialists, % recommend).
+
 ## Swapping content
 - **Images:** replace every `https://placehold.co/...` URL with your image path, e.g. `assets/images/hero.jpg`.
 - **Clinic name, phone, address, hours:** search for `Clinic Name`, `(000) 000-0000`, `Street address`, `hello@example.com`.
