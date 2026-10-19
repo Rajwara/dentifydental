@@ -849,3 +849,21 @@ body.no-scroll { overflow: hidden; }
 }
 .svc-ba { height: 520px; }
 @media (max-width: 767px) { .svc-ba { height: 340px; } }
+
+/* Tooth anatomy diagram (root canal page) */
+.anatomy { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: center; padding: 40px; border-radius: var(--radius); background: var(--cream); }
+.anatomy-figure svg { width: 100%; height: auto; overflow: visible; }
+.anatomy-copy { display: grid; gap: 16px; }
+.anat-line { fill: var(--white); stroke: var(--teal); stroke-width: 3; stroke-linejoin: round; }
+.anat-thin { fill: none; stroke-width: 1.5; stroke-dasharray: 4 5; }
+.anat-gum { fill: none; stroke: #E8A0A0; stroke-width: 10; stroke-linecap: round; opacity: .55; }
+.anat-pulp { fill: var(--lime); stroke: var(--teal); stroke-width: 1.5; }
+.anat-label line { stroke: var(--teal); stroke-width: 1; }
+.anat-label circle { fill: var(--teal); }
+.anat-label text { fill: var(--teal); }
+.symptoms { display: grid; gap: 12px; padding-top: 8px; }
+.symptoms-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; opacity: .7; }
+.symptoms .chip { background: var(--white); transition: background .3s, color .3s; }
+.symptoms .chip:hover { background: var(--teal); color: var(--lime); }
+@media (max-width: 1199px) { .anatomy { grid-template-columns: 1fr; } .anatomy-figure { max-width: 380px; margin: 0 auto; width: 100%; } }
+@media (max-width: 767px) { .anatomy { padding: 24px; } .anatomy-figure { padding: 0 40px; } }

@@ -490,3 +490,24 @@ $$('.has-drop').forEach((wrap) => {
     $('.open-text', status).textContent = open ? 'Open now · until 9 pm' : 'Closed now · Mon–Sat 10 am – 9 pm';
   }
 })();
+
+/* ===== Tooth anatomy diagram: outline draws in, pulp fills, labels appear ===== */
+(() => {
+  const fig = $('[data-draw]');
+  if (!fig || !animate) return;
+  const lines = $$('.anat-line, .anat-gum', fig);
+  lines.forEach((p) => {
+    const len = p.getTotalLength();
+    gsap.set(p, { strokeDasharray: len, strokeDashoffset: len, fillOpacity: 0 });
+  });
+  const pulp = $('.anat-pulp', fig);
+  const labels = $$('.anat-label', fig);
+  gsap.set(pulp, { scaleY: 0, transformOrigin: '50% 0%' });
+  gsap.set(labels, { opacity: 0, x: -8 });
+  gsap.timeline({ scrollTrigger: { trigger: fig, start: 'top 75%' } })
+    .to(lines, { strokeDashoffset: 0, duration: 1.8, ease: 'power2.inOut', stagger: 0.2 })
+    .to(lines, { fillOpacity: 1, duration: 0.6 }, '-=0.4')
+    .to(pulp, { scaleY: 1, duration: 1, ease: 'power3.out' }, '-=0.3')
+    .to(labels, { opacity: 1, x: 0, duration: 0.5, stagger: 0.12, ease: 'power2.out' }, '-=0.4')
+    .add(() => $$('.anat-thin', fig).forEach((p) => gsap.set(p, { strokeDasharray: '4 5' })));
+})();
