@@ -409,3 +409,84 @@ $$('.has-drop').forEach((wrap) => {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && wrap.classList.contains('is-open')) { set(false); trigger.focus(); } });
   wrap.addEventListener('focusout', (e) => { if (isDesktop() && !wrap.contains(e.relatedTarget)) set(false); });
 });
+
+/* ===== Rich single service page (treatment cards, exam timeline, open status) ===== */
+(() => {
+  // Treatment cards: clip-path wipe in, then 3D tilt + cursor spotlight on desktop
+  const cards = $$('[data-tx]');
+  if (cards.length) {
+    if (animate) {
+      gsap.set(cards, { clipPath: 'inset(100% 0% 0% 0% round 22px)' });
+      gsap.set(cards.map((c) => $('img', c)), { scale: 1.25 });
+      ScrollTrigger.batch(cards, {
+        start: 'top 90%',
+        onEnter: (els) => {
+          gsap.to(els, { clipPath: 'inset(0% 0% 0% 0% round 22px)', duration: 1.2, ease: 'power4.out', stagger: 0.15 });
+          gsap.to(els.map((c) => $('img', c)), { scale: 1, duration: 1.6, ease: 'power3.out', stagger: 0.15, clearProps: 'transform' });
+        },
+      });
+    }
+    if (animate && window.matchMedia('(hover: hover)').matches) {
+      cards.forEach((card) => {
+        const rx = gsap.quickTo(card, 'rotationX', { duration: 0.5, ease: 'power3.out' });
+        const ry = gsap.quickTo(card, 'rotationY', { duration: 0.5, ease: 'power3.out' });
+        gsap.set(card, { transformPerspective: 900 });
+        card.addEventListener('pointermove', (e) => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width;
+          const y = (e.clientY - r.top) / r.height;
+          card.style.setProperty('--mx', x * 100 + '%');
+          card.style.setProperty('--my', y * 100 + '%');
+          ry((x - 0.5) * 10);
+          rx((0.5 - y) * 10);
+        });
+        card.addEventListener('pointerleave', () => { rx(0); ry(0); });
+      });
+    }
+  }
+
+  // Exam timeline: line fills as you scroll, dots light up as the line reaches them
+  const line = $('[data-exam]');
+  if (line) {
+    const items = $$('li', line);
+    if (animate) {
+      ScrollTrigger.create({
+        trigger: line, start: 'top 70%', end: 'bottom 60%', scrub: true,
+        onUpdate: (self) => {
+          line.style.setProperty('--progress', self.progress.toFixed(3));
+          items.forEach((li, i) => li.classList.toggle('is-lit', self.progress >= i / Math.max(items.length - 1, 1) - 0.02));
+        },
+      });
+    } else {
+      line.style.setProperty('--progress', 1);
+      items.forEach((li) => li.classList.add('is-lit'));
+    }
+  }
+
+  // Benefits checklist: ticks pop in one by one
+  const checks = $$('.svc-checks li');
+  if (checks.length && animate) {
+    gsap.from(checks, {
+      opacity: 0, x: -30, duration: 0.7, ease: 'power3.out', stagger: 0.1,
+      scrollTrigger: { trigger: checks[0].parentElement, start: 'top 85%' },
+    });
+  }
+
+  // Hero image: soft zoom-out on load
+  const heroImg = $('.svc-hero-media > img');
+  if (heroImg && animate) {
+    gsap.from(heroImg.parentElement, { clipPath: 'inset(12% 8% 0% 8% round 24px)', duration: 1.6, ease: 'power3.out', delay: 0.2 });
+  }
+
+  // "Open now" badge, based on clinic hours in Lahore (Mon–Sat, 10:00–21:00)
+  const status = $('[data-open-status]');
+  if (status) {
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Karachi', weekday: 'short', hour: 'numeric', hour12: false })
+      .formatToParts(new Date());
+    const day = parts.find((p) => p.type === 'weekday').value;
+    const hour = +parts.find((p) => p.type === 'hour').value;
+    const open = day !== 'Sun' && hour >= 10 && hour < 21;
+    status.classList.toggle('is-open', open);
+    $('.open-text', status).textContent = open ? 'Open now · until 9 pm' : 'Closed now · Mon–Sat 10 am – 9 pm';
+  }
+})();
