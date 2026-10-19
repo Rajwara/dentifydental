@@ -530,3 +530,38 @@ $$('.has-drop').forEach((wrap) => {
     .to(teeth, { rotation: 0, x: 0, y: 0, ease: 'power1.inOut', stagger: 0.04 }, 0)
     .to(bar, { scaleX: 1, ease: 'none', duration: 1 + 0.04 * (teeth.length - 1) }, 0);
 })();
+
+/* ===== Material comparison tabs: sliding pill, panel crossfade, dots fill in ===== */
+(() => {
+  const box = $('[data-mat]');
+  if (!box) return;
+  const tabs = $$('.mat-tab', box);
+  const list = $('.mat-tabs', box);
+  const fillDots = (panel) => {
+    if (!animate) return;
+    gsap.fromTo($$('.mat-dots i.on', panel), { scale: 0 }, { scale: 1, duration: 0.4, ease: 'back.out(3)', stagger: 0.05 });
+  };
+  const select = (tab, focus) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      const panel = $('#' + t.getAttribute('aria-controls'));
+      panel.hidden = !on;
+      if (on && animate) {
+        gsap.fromTo(panel, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' });
+        fillDots(panel);
+      }
+    });
+    list.classList.toggle('is-second', tabs.indexOf(tab) === 1);
+    if (focus) tab.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); select(tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length], true); }
+    });
+  });
+  if (animate) ScrollTrigger.create({ trigger: box, start: 'top 75%', once: true, onEnter: () => fillDots($('.mat-panel:not([hidden])', box)) });
+})();
