@@ -16,3 +16,4 @@ Put this page's photos in this folder (JPG or WebP). Use the suggested file name
 | `service-image-9.jpg` | 800 × 400 | Service Image | — |
 | `service-image-10.jpg` | 800 × 400 | Service Image | — |
 | `service-image-11.jpg` | 800 × 400 | Service Image | — |
+| `service-image-12.jpg` | 800 × 400 | Service Image | — |

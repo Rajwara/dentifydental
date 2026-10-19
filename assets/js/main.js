@@ -565,3 +565,38 @@ $$('.has-drop').forEach((wrap) => {
   });
   if (animate) ScrollTrigger.create({ trigger: box, start: 'top 75%', once: true, onEnter: () => fillDots($('.mat-panel:not([hidden])', box)) });
 })();
+
+/* ===== Recovery guide: slider swaps stage content and fills the ring ===== */
+(() => {
+  const box = $('[data-recovery]');
+  if (!box) return;
+  const stages = JSON.parse(box.dataset.recovery);
+  const input = $('input[type="range"]', box);
+  const ring = $('.recovery-ring-fill', box);
+  const content = $('.recovery-content', box);
+  const C = 2 * Math.PI * 52;
+  let current = -1;
+  const show = (i) => {
+    const s = stages[i];
+    input.style.setProperty('--fill', (i / (stages.length - 1)) * 100 + '%');
+    input.setAttribute('aria-valuetext', s.t);
+    ring.style.strokeDashoffset = C * (1 - (i + 1) / stages.length);
+    if (i === current) return;
+    const render = () => {
+      $('[data-rec-step]', box).textContent = i + 1;
+      $('[data-rec-time]', box).textContent = s.t;
+      $('[data-rec-title]', box).textContent = s.s;
+      const ul = $('[data-rec-tips]', box);
+      ul.replaceChildren(...s.tips.map((tip) => Object.assign(document.createElement('li'), { textContent: tip })));
+      if (animate) {
+        gsap.fromTo(content, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out', overwrite: true });
+        gsap.from($$('li', ul), { opacity: 0, x: -14, duration: 0.4, stagger: 0.06, ease: 'power2.out' });
+      }
+    };
+    if (animate && current !== -1) gsap.to(content, { opacity: 0, y: -8, duration: 0.15, overwrite: true, onComplete: render });
+    else render();
+    current = i;
+  };
+  input.addEventListener('input', () => show(+input.value));
+  show(0);
+})();
