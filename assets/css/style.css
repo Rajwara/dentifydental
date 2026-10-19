@@ -847,3 +847,5 @@ body.no-scroll { overflow: hidden; }
   .svc-float, .svc-orbit svg, .open-status.is-open .open-dot { animation: none; }
   .tx-card img, .tx-body p { transition: none; }
 }
+.svc-ba { height: 520px; }
+@media (max-width: 767px) { .svc-ba { height: 340px; } }
