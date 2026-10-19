@@ -8,14 +8,15 @@ Open `index.html` in a browser. All files must stay in the same folder.
 | index.html | Home |
 | about.html | About us |
 | services.html | All services (with category filter) |
-| service-*.html | 9 single service pages |
+| service-*.html | Single service pages (6 clinic treatments + 6 extra) |
 | doctors.html | Doctors (click a card for the profile pop-up) |
 | pricing.html | Membership plans (monthly/yearly toggle) + treatment prices |
 | blog.html | Blog list (filter + load more + newsletter) |
 | blog-post.html | Single blog post (reading bar, contents, share) |
 | careers.html | Careers + open roles |
 | contact.html | Contact info, map, appointment form |
-| terms.html | Terms & conditions / privacy |
+| terms.html | Terms & conditions |
+| privacy.html | Privacy policy |
 | 404.html | Page not found |
 
 Folder structure:

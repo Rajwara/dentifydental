@@ -965,3 +965,4 @@ body.no-scroll { overflow: hidden; }
   .recovery-ring-label { left: 24px; top: 24px; }
   .recovery-ticks { font-size: 11px; }
 }
+.legal ul { gap: 6px; margin: 12px 0 16px; }
