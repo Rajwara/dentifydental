@@ -2,15 +2,13 @@
 
 Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
 
-**Already in use:** `hero.webp` (main banner at the top of the page) and the six treatment card photos in `services-card/`.
+**Already in use:** `hero.webp` (main banner), `about-main.webp` and `about-detail.webp` (About section), and the six treatment card photos in `services-card/`.
 
 | Suggested file name | Size (px) | Placeholder label | Description |
 |---|---|---|---|
 | `a.jpg` | 80 × 80 | A | — |
 | `b.jpg` | 80 × 80 | B | — |
 | `c.jpg` | 80 × 80 | C | — |
-| `about-image.jpg` | 1000 × 1200 | About Image | Dentify Dental clinic |
-| `detail-image.jpg` | 600 × 500 | Detail Image | Dental treatment room |
 | `fa.jpg` | 120 × 120 | FA | — |
 | `clinic-interior.jpg` | 1000 × 1100 | Clinic Interior | Treatment room at Dentify Dental |
 | `before.jpg` | 1400 × 1000 | Before | Before treatment |

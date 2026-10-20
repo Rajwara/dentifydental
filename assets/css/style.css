@@ -1215,3 +1215,4 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
 .testi-cta-quote { position: absolute; right: 24px; bottom: -30px; font: 400 150px/1 var(--f-display); opacity: .1; pointer-events: none; }
 .testi-cta-actions { display: grid; gap: 16px; justify-items: start; margin-top: auto; }
 @media (max-width: 767px) { .hero-media img { object-position: 65% center; } }
+.about-media .img-float { height: auto; aspect-ratio: 6 / 5; object-fit: cover; }
