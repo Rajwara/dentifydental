@@ -48,3 +48,13 @@ Search the project for `[FILL` to find every spot that needs real clinic informa
 - **404:** set `404.html` as the error page on your host.
 
 Libraries (loaded from CDN): GSAP 3.12.5, ScrollTrigger, Lenis 1.1.13. Fonts: DM Sans + Instrument Serif (Google Fonts).
+
+## Deploying on Vercel
+This is a static site, so there's nothing to build.
+
+1. In Vercel, choose **Add New → Project** and import the `Rajwara/dentifydental` GitHub repository.
+2. Framework preset: **Other**. Leave the build command and output directory empty; the root directory is the repository root.
+3. Click **Deploy**. Every push to the repository then redeploys the site automatically.
+4. To use `dentifydental.pk`, open the project's **Settings → Domains**, add the domain, and set the DNS records Vercel shows at your domain registrar.
+
+`vercel.json` adds caching for images and a few security headers. `404.html` is used automatically for missing pages.
