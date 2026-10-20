@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dentify Dental — Modern Dental Care</title>
-  <meta name="description" content="Dentify Dental is a modern dental clinic in DHA Rahbar Phase XI, Lahore. Check-ups, whitening, aligners, implants, root canals and kids dentistry. Open Mon–Sat, 10 am – 9 pm.">
+  <meta name="description" content="Dentify Dental &amp; Orthodontic Studio in DHA Rahbar Phase XI, Lahore: precision dentistry, orthodontics, cosmetic and surgical care with transparent pricing. Open Mon–Sat, 10 am – 9 pm.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -61,19 +61,21 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="container">
+        <span class="eyebrow hero-eyebrow" data-reveal>Welcome to Dentify Dental &amp; Orthodontic Studio</span>
         <div class="hero-grid">
           <h1 class="h1 hero-title" data-split>
-            <span class="line"><span>Calm, careful</span></span>
-            <span class="line"><span>care for every</span></span>
-            <span class="line"><span class="italic">smile.</span></span>
+            <span class="line"><span>Precision dentistry</span></span>
+            <span class="line"><span>for a confident,</span></span>
+            <span class="line"><span class="italic">beautiful smile.</span></span>
           </h1>
           <div class="hero-copy" data-reveal>
-            <p class="text-lg">Dentify Dental is a modern, family-friendly clinic in DHA Rahbar, Lahore. We take time to listen, explain every option clearly and make each visit as comfortable as possible.</p>
+            <p class="text-lg">Experience premium dental care in DHA Lahore with advanced digital technology, specialist expertise and personalised treatment plans. From routine care to complex smile transformations, we create healthy smiles with comfort and precision.</p>
             <div class="hero-actions">
               <a href="contact.html" class="btn" data-roll>
                 <span class="btn-roll"><span>Book Appointment</span><span>Book Appointment</span></span>
                 <span class="btn-icon">↗</span>
               </a>
+              <a href="tel:+923257766667" class="hero-call"><span class="hero-call-ico" aria-hidden="true">☏</span><span><small>Call us today</small><strong>+92 325 7766667</strong></span></a>
               <div class="rating">
                 <div class="avatars">
                   <img src="https://placehold.co/80x80/CEEA73/265C5C?text=A" alt="">
@@ -92,8 +94,8 @@
         <div class="hero-media">
           <img data-parallax src="https://placehold.co/1800x1100/265C5C/CEEA73?text=Hero+Image" alt="Smiling patient at Dentify Dental">
           <div class="hero-badge" data-reveal>
-            <span class="num" data-count="15">0</span>
-            <span>Years of gentle, family-friendly dental care [FILL: confirm]</span>
+            <span class="num"><span data-count="10">0</span>+</span>
+            <span>Years of expert care, healthier smiles</span>
           </div>
           <div class="hero-badge-round" aria-hidden="true">
             <svg viewBox="0 0 140 140">
@@ -105,6 +107,22 @@
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#265C5C" stroke-width="2" style="position:static;animation:none"><path d="M7 17L17 7M8 7h9v9"/></svg>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ QUICK BOOKING (sends the request on WhatsApp) ============ -->
+    <section class="quick-book-wrap">
+      <div class="container">
+        <form class="quick-book" id="quickBook" novalidate data-reveal>
+          <div class="quick-book-head"><span class="eyebrow">Book an appointment</span><p class="text-sm muted">Send your request on WhatsApp and we'll confirm within 2 working hours.</p></div>
+          <label class="qb-field"><span class="sr-only">Full name</span><input name="name" placeholder="Full name" autocomplete="name" required></label>
+          <label class="qb-field"><span class="sr-only">Phone number</span><input name="phone" type="tel" placeholder="Phone number" autocomplete="tel" required pattern="[0-9+()\-\s]{7,}"></label>
+          <label class="qb-field"><span class="sr-only">Treatment of interest</span><select name="treatment"><option value="">Treatment of interest</option><option>Preventive Dental Care</option><option>Cosmetic Dentistry</option><option>Root Canal Treatment</option><option>Orthodontics</option><option>Crowns &amp; Prosthetics</option><option>Surgical Dentistry</option><option>Not sure yet</option></select></label>
+          <label class="qb-field"><span class="sr-only">Preferred date</span><input name="date" type="date"></label>
+          <label class="qb-field"><span class="sr-only">Preferred time</span><select name="time"><option value="">Preferred time</option><option>10 am – 1 pm</option><option>1 pm – 4 pm</option><option>4 pm – 7 pm</option><option>7 pm – 9 pm</option></select></label>
+          <button type="submit" class="btn btn--teal qb-submit" data-roll><span class="btn-roll"><span>Book on WhatsApp</span><span>Book on WhatsApp</span></span><span class="btn-icon">↗</span></button>
+          <p class="qb-err" role="alert" hidden>Please add your name and a valid phone number.</p>
+        </form>
       </div>
     </section>
 
@@ -129,17 +147,18 @@
         </div>
         <div class="about-copy">
           <span class="eyebrow" data-reveal>About us</span>
-          <h2 class="h3" data-reveal>A practice built around time, trust and honest advice.</h2>
-          <p class="text-lg muted" data-reveal>At Dentify Dental, you're never rushed. We explain what we see, show you your options and their costs up front, and only recommend treatment you actually need, all in a calm, spotless clinic.</p>
+          <h2 class="h3" data-reveal>Where precision dentistry meets the art of smiling.</h2>
+          <p class="text-lg muted" data-reveal>At Dentify Dental &amp; Orthodontic Studio, we combine advanced technology, specialist expertise and a patient-focused approach to create exceptional dental experiences. Located in DHA Lahore, our clinic uses digital dentistry and modern techniques to deliver precise, comfortable and long-lasting results.</p>
           <ul class="checklist" data-reveal>
             <li>Open Monday to Saturday, 10 am – 9 pm, so you can book after work</li>
             <li>Clear treatment plans and prices before we start</li>
             <li>Modern equipment and strict sterilisation for every patient</li>
           </ul>
+          <div class="lead-doc" data-reveal><img src="https://placehold.co/120x120/265C5C/CEEA73?text=FA" alt="" width="56" height="56"><div><strong>Dr. Muhammad Farhan Ali</strong><span class="text-sm muted">Orthodontic Specialist</span></div><a href="about.html" class="btn btn--teal" data-roll><span class="btn-roll"><span>Learn More</span><span>Learn More</span></span><span class="btn-icon">↗</span></a></div>
           <div class="stats" data-reveal>
-            <div class="stat"><div class="num"><span data-count="12">0</span>k+</div><div class="text-sm">Happy patients</div></div>
-            <div class="stat"><div class="num"><span data-count="8">0</span></div><div class="text-sm">Specialists</div></div>
-            <div class="stat"><div class="num"><span data-count="98">0</span>%</div><div class="text-sm">Would recommend</div></div>
+            <div class="stat"><div class="num"><span data-count="10">0</span>+</div><div class="text-sm">Years of experience</div></div>
+            <div class="stat"><div class="num"><span data-count="5">0</span>k+</div><div class="text-sm">Happy patients</div></div>
+            <div class="stat"><div class="num"><span data-count="6">0</span></div><div class="text-sm">Treatment specialities</div></div>
           </div>
         </div>
       </div>
@@ -150,10 +169,10 @@
       <div class="container">
         <div class="section-head">
           <h2 class="h2" data-split>
-            <span class="line"><span>Treatments</span></span>
-            <span class="line"><span class="italic">we offer</span></span>
+            <span class="line"><span>Our comprehensive</span></span>
+            <span class="line"><span class="italic">dental services</span></span>
           </h2>
-          <p class="text-lg muted" data-reveal>From preventive care to smile makeovers, orthodontics and oral surgery, everything is under one roof. Hover a card to learn more.</p>
+          <p class="text-lg muted" data-reveal>Advanced dental treatments designed to restore, protect and enhance your smile with precision care. Hover a card to learn more.</p>
         </div>
         <div class="services-grid">
           <!-- Duplicate a card to add more services -->
@@ -161,44 +180,60 @@
             <span class="service-num">01</span>
             <h3 class="h4">Preventive Dental Care</h3>
             <img src="assets/images/home/services-card/preventive-dental-care.webp" alt="Preventive Dental Care at Dentify Dental" width="600" height="400" loading="lazy">
-            <p class="muted">Check-ups, digital X-rays, scaling and polishing to catch problems early and keep your smile healthy.</p>
+            <p class="muted">Maintain a healthy smile with regular check-ups and preventive treatments for long-term oral health.</p>
             <span class="more">Learn more <span class="arrow">↗</span></span>
           </a>
           <a href="service-cosmetic-dentistry.html" class="service-card" data-reveal>
             <span class="service-num">02</span>
             <h3 class="h4">Cosmetic Dentistry</h3>
             <img src="assets/images/home/services-card/cosmetic-dentistry.webp" alt="Cosmetic Dentistry at Dentify Dental" width="600" height="400" loading="lazy">
-            <p class="muted">Whitening, composite bonding and smile design for natural-looking, confident results.</p>
+            <p class="muted">Enhance your smile with advanced aesthetic treatments designed for a brighter, natural-looking appearance.</p>
             <span class="more">Learn more <span class="arrow">↗</span></span>
           </a>
           <a href="service-root-canal.html" class="service-card" data-reveal>
             <span class="service-num">03</span>
             <h3 class="h4">Root Canal Treatment</h3>
             <img src="assets/images/home/services-card/root-canal-treatment.webp" alt="Root Canal Treatment at Dentify Dental" width="600" height="400" loading="lazy">
-            <p class="muted">Relieve pain and save your natural tooth with careful, comfortable root canal care.</p>
+            <p class="muted">Pain-relieving endodontic treatment to save infected teeth and restore function with long-lasting results.</p>
             <span class="more">Learn more <span class="arrow">↗</span></span>
           </a>
           <a href="service-orthodontics.html" class="service-card" data-reveal>
             <span class="service-num">04</span>
             <h3 class="h4">Orthodontics</h3>
             <img src="assets/images/home/services-card/orthodontics.webp" alt="Orthodontics at Dentify Dental" width="600" height="400" loading="lazy">
-            <p class="muted">Metal braces, ceramic braces, clear aligners and retainers for a straighter smile.</p>
+            <p class="muted">Achieve a straighter smile with advanced braces and aligner treatments customised to your dental needs.</p>
             <span class="more">Learn more <span class="arrow">↗</span></span>
           </a>
           <a href="service-crowns-prosthetics.html" class="service-card" data-reveal>
             <span class="service-num">05</span>
             <h3 class="h4">Crowns &amp; Prosthetics</h3>
             <img src="assets/images/home/services-card/crowns-prosthetics.webp" alt="Crowns & Prosthetics at Dentify Dental" width="600" height="400" loading="lazy">
-            <p class="muted">Zirconia and E-Max crowns and veneers, and custom dentures that restore strength and function.</p>
+            <p class="muted">Restore damaged or missing teeth with natural-looking, durable and comfortable dental solutions.</p>
             <span class="more">Learn more <span class="arrow">↗</span></span>
           </a>
           <a href="service-surgical-dentistry.html" class="service-card" data-reveal>
             <span class="service-num">06</span>
             <h3 class="h4">Surgical Dentistry</h3>
             <img src="assets/images/home/services-card/surgical-dentistry.webp" alt="Surgical Dentistry at Dentify Dental" width="600" height="400" loading="lazy">
-            <p class="muted">Simple, surgical, wisdom tooth and paediatric extractions with clear aftercare.</p>
+            <p class="muted">Receive safe and precise dental surgical care with modern techniques focused on comfort and effective results.</p>
             <span class="more">Learn more <span class="arrow">↗</span></span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY CHOOSE US ============ -->
+    <section class="section why-choose">
+      <div class="container why-grid">
+        <div class="about-copy" style="align-content:start">
+          <span class="eyebrow" data-reveal>Why choose us</span>
+          <h2 class="h2" data-split><span class="line"><span>Reasons to</span></span><span class="line"><span class="italic">choose Dentify</span></span></h2>
+          <p class="text-lg muted" data-reveal>We combine advanced technology, specialist expertise and personalised care to deliver exceptional dental experiences with lasting results.</p>
+          <div class="faq-list why-list" data-reveal><div class="faq-item is-open"><button class="faq-q" aria-expanded="true">Specialist dental care<span class="faq-icon"></span></button><div class="faq-a" style="height:auto"><p class="muted">Our team of skilled dentists provides expert treatment with precision, experience and a personalised approach for every patient.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Digital dentistry &amp; advanced technology<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Digital X-rays, modern equipment and careful planning help us diagnose accurately and treat with precision.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Painless &amp; comfortable experience<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Local anaesthesia, gentle techniques and a calm clinic help you feel relaxed from the moment you arrive.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Personalised treatment plans<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Every plan is built around your teeth, your goals and your budget, explained clearly before anything begins.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Affordable, transparent pricing<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Clear prices with no hidden charges. You'll know the cost of your treatment before it starts.</p></div></div></div>
+        </div>
+        <div class="why-media" data-reveal>
+          <img data-parallax src="https://placehold.co/1000x1100/1D4747/CEEA73?text=Clinic+Interior" alt="Treatment room at Dentify Dental" loading="lazy">
+          <div class="why-badge"><span class="num"><span data-count="5">0</span>k+</span><span>Happy patients and counting</span></div>
         </div>
       </div>
     </section>
@@ -228,10 +263,10 @@
         <div class="about-copy">
           <span class="eyebrow" data-reveal>Results</span>
           <h2 class="h2" data-split>
-            <span class="line"><span>See the</span></span>
-            <span class="line"><span class="italic">difference</span></span>
+            <span class="line"><span>Smile transformations</span></span>
+            <span class="line"><span class="italic">that inspire confidence</span></span>
           </h2>
-          <p class="text-lg muted" data-reveal>Real results from treatments at our clinic. Drag the slider to compare before and after.</p>
+          <p class="text-lg muted" data-reveal>Explore our advanced dental treatments and smile transformations, designed with modern techniques to deliver natural, confident results. Drag the slider to compare.</p>
           <div data-reveal>
             <a href="contact.html" class="btn btn--teal" data-roll>
               <span class="btn-roll"><span>Start Your Plan</span><span>Start Your Plan</span></span>
@@ -254,8 +289,8 @@
       <div class="container">
         <div class="section-head">
           <h2 class="h2" data-split>
-            <span class="line"><span>Kind words</span></span>
-            <span class="line"><span class="italic">from patients</span></span>
+            <span class="line"><span>What our patients</span></span>
+            <span class="line"><span class="italic">say about us</span></span>
           </h2>
           <div class="testi-controls" data-reveal>
             <button class="round-btn" id="prev" aria-label="Previous">←</button>
@@ -265,13 +300,32 @@
         <div class="testi-viewport" data-reveal>
           <div class="testi-track" id="testiTrack">
             <!-- Replace with real patient reviews -->
-            <article class="testi-card"><div class="stars">★★★★★</div><blockquote>“[FILL: paste a real patient review from Google]”</blockquote><div class="testi-person"><img src="https://placehold.co/112x112/CEEA73/265C5C?text=P" alt=""><div><strong>[FILL: patient name]</strong><div class="text-sm muted">Treatment</div></div></div></article>
+            <article class="testi-card"><div class="stars">★★★★★</div><blockquote>“The entire experience was smooth and comfortable. The team provided excellent care and helped me achieve the smile I always wanted.”</blockquote><div class="testi-person"><img src="https://placehold.co/112x112/CEEA73/265C5C?text=P" alt=""><div><strong>Ahmed Khan</strong><div class="text-sm muted">Patient</div></div></div></article>
             <article class="testi-card"><div class="stars">★★★★★</div><blockquote>“[FILL: paste a real patient review from Google]”</blockquote><div class="testi-person"><img src="https://placehold.co/112x112/265C5C/CEEA73?text=P" alt=""><div><strong>[FILL: patient name]</strong><div class="text-sm muted">Treatment</div></div></div></article>
             <article class="testi-card"><div class="stars">★★★★★</div><blockquote>“[FILL: paste a real patient review from Google]”</blockquote><div class="testi-person"><img src="https://placehold.co/112x112/EDEEE9/265C5C?text=P" alt=""><div><strong>[FILL: patient name]</strong><div class="text-sm muted">Treatment</div></div></div></article>
             <article class="testi-card"><div class="stars">★★★★★</div><blockquote>“[FILL: paste a real patient review from Google]”</blockquote><div class="testi-person"><img src="https://placehold.co/112x112/CEEA73/265C5C?text=P" alt=""><div><strong>[FILL: patient name]</strong><div class="text-sm muted">Treatment</div></div></div></article>
             <article class="testi-card"><div class="stars">★★★★★</div><blockquote>“[FILL: paste a real patient review from Google]”</blockquote><div class="testi-person"><img src="https://placehold.co/112x112/265C5C/CEEA73?text=P" alt=""><div><strong>[FILL: patient name]</strong><div class="text-sm muted">Treatment</div></div></div></article>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ BOOK CTA + PRICING PREVIEW ============ -->
+    <section class="section bg-cream home-pricing">
+      <div class="container">
+        <div class="book-band" data-reveal>
+          <div><h2 class="h4">Book your appointment today</h2><p class="muted">Ready to transform your smile? Schedule your visit with our specialists and get expert care tailored to you.</p></div>
+          <div class="book-band-actions">
+            <a href="pricing.html" class="btn btn--ghost" data-roll><span class="btn-roll"><span>Explore Pricing</span><span>Explore Pricing</span></span><span class="btn-icon">↗</span></a>
+            <a href="contact.html" class="btn" data-roll><span class="btn-roll"><span>Make Appointment</span><span>Make Appointment</span></span><span class="btn-icon">↗</span></a>
+          </div>
+        </div>
+        <div class="section-head">
+          <h2 class="h2" data-split><span class="line"><span>Transparent</span></span><span class="line"><span class="italic">dental pricing</span></span></h2>
+          <p class="text-lg muted" data-reveal>We believe in transparent pricing with no hidden charges, so you can choose your treatment with confidence.</p>
+        </div>
+        <div class="price-list"><div class="price-group" data-reveal><span class="price-num">01</span><h3 class="h4">Diagnostic</h3><div class="price-row"><span>Dental Examination + 1 X-ray</span><span class="dots"></span><strong>Rs. 850</strong></div><div class="price-row"><span>X-ray Fee (additional)</span><span class="dots"></span><strong>Rs. 150</strong></div></div><div class="price-group" data-reveal><span class="price-num">02</span><h3 class="h4">Periodontal</h3><div class="price-row"><span>Scaling &amp; Polishing</span><span class="dots"></span><strong>Rs. 2,500</strong></div><div class="price-row"><span>Deep Scaling / Root Planing</span><span class="dots"></span><strong>Rs. 4,000</strong></div><div class="price-row"><span>Teeth Whitening</span><span class="dots"></span><strong>Rs. 20,000</strong></div></div><div class="price-group" data-reveal><span class="price-num">03</span><h3 class="h4">Surgical</h3><div class="price-row"><span>Tooth Extraction: Simple</span><span class="dots"></span><strong>Rs. 2,500</strong></div><div class="price-row"><span>Wisdom Tooth Extraction</span><span class="dots"></span><strong>Rs. 8,000</strong></div><div class="price-row"><span>Surgical Extraction</span><span class="dots"></span><strong>Rs. 10,000</strong></div></div></div>
+        <div class="home-pricing-more" data-reveal><a href="pricing.html" class="link-arrow">See all prices and membership plans <span>→</span></a></div>
       </div>
     </section>
 
@@ -283,13 +337,13 @@
             <span class="line"><span>Meet the</span></span>
             <span class="line"><span class="italic">team</span></span>
           </h2>
-          <p class="text-lg muted" data-reveal>Experienced dentists who care about your comfort as much as your teeth.</p>
+          <p class="text-lg muted" data-reveal>Our experienced dental team combines advanced knowledge, modern techniques and compassionate care to deliver exceptional treatment outcomes.</p>
         </div>
         <div class="team-grid">
-          <div class="team-card" data-reveal><div class="photo"><img src="https://placehold.co/700x900/265C5C/CEEA73?text=Team+Photo" alt=""></div><h3 class="h4">[FILL: Doctor name]</h3><p class="muted">Lead Dentist</p></div>
-          <div class="team-card" data-reveal><div class="photo"><img src="https://placehold.co/700x900/265C5C/CEEA73?text=Team+Photo" alt=""></div><h3 class="h4">[FILL: Doctor name]</h3><p class="muted">Orthodontist</p></div>
-          <div class="team-card" data-reveal><div class="photo"><img src="https://placehold.co/700x900/265C5C/CEEA73?text=Team+Photo" alt=""></div><h3 class="h4">[FILL: Doctor name]</h3><p class="muted">Implant Specialist</p></div>
-          <div class="team-card" data-reveal><div class="photo"><img src="https://placehold.co/700x900/265C5C/CEEA73?text=Team+Photo" alt=""></div><h3 class="h4">[FILL: Doctor name]</h3><p class="muted">Pediatric Dentist</p></div>
+          <div class="team-card" data-reveal><div class="photo"><img src="https://placehold.co/700x900/265C5C/CEEA73?text=Team+Photo" alt=""></div><h3 class="h4">Dr. Muhammad Farhan Ali</h3><p class="muted">Orthodontic Specialist</p></div>
+          <div class="team-card" data-reveal><div class="photo"><img src="https://placehold.co/700x900/265C5C/CEEA73?text=Team+Photo" alt=""></div><h3 class="h4">Dr. Affan Jabbar</h3><p class="muted">Dental Surgeon</p></div>
+          <div class="team-card" data-reveal><div class="photo"><img src="https://placehold.co/700x900/265C5C/CEEA73?text=Team+Photo" alt=""></div><h3 class="h4">Dr. Rafay Raza</h3><p class="muted">Dental Surgeon</p></div>
+          <div class="team-card" data-reveal><div class="photo"><img src="https://placehold.co/700x900/265C5C/CEEA73?text=Team+Photo" alt=""></div><h3 class="h4">Sakina Batool Ali</h3><p class="muted">Practice Manager</p></div>
         </div>
       </div>
     </section>
@@ -300,12 +354,66 @@
         <div class="about-copy" style="align-content:start">
           <span class="eyebrow" data-reveal>FAQ</span>
           <h2 class="h2" data-split>
-            <span class="line"><span>Questions,</span></span>
-            <span class="line"><span class="italic">answered</span></span>
+            <span class="line"><span>Frequently asked</span></span>
+            <span class="line"><span class="italic">questions</span></span>
           </h2>
           <p class="text-lg muted" data-reveal>Can't find what you need? Call us at +92 325 7766667.</p>
         </div>
-        <div class="faq-list" data-reveal><div class="faq-item"><button class="faq-q" aria-expanded="false">Where is Dentify Dental located?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Commercial Plot 3, First Floor, Block 2P, DHA Rahbar Phase XI, Sector 2, Lahore.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">What are your opening hours?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Monday to Saturday, 10:00 am to 9:00 pm. We're closed on Sunday.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">How do I book an appointment?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Call or WhatsApp us on +92 325 7766667, email contact@dentifydental.pk, or send a request through our contact page. We'll confirm your appointment within 2 working hours.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Do you treat dental emergencies?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Yes. If you have severe pain, swelling or a broken tooth, call us and we'll see you as soon as possible.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Do you treat children?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Yes. We see children from their first tooth onwards and take extra time to keep them calm and comfortable.</p></div></div></div>
+        <div class="faq-list" data-reveal><div class="faq-item"><button class="faq-q" aria-expanded="false">Why choose Dentify Dental Studio?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">We combine specialist expertise, advanced technology and personalised care to deliver exceptional dental outcomes, with transparent pricing and no hidden charges.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">How often should I visit the dentist?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">For most people every six months. If you have gum disease, braces or other risk factors, your dentist may recommend more frequent visits.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Is teeth whitening safe?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Yes, when it's done under clinical supervision. We check your teeth first and protect your gums during treatment. Mild sensitivity for a day or two is normal.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Does dental treatment hurt?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Most treatments are done under local anaesthetic, so you feel pressure rather than pain. Tell us if you're nervous and we'll go at your pace.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">How long does a dental implant last?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">With good oral hygiene and regular check-ups, implants can last for many years. The crown on top may need replacing over time.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Do you offer payment plans?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Yes. For larger treatments such as braces, crowns and dentures, you can spread payments across your visits. We also offer yearly and monthly care plans.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">What should I do in a dental emergency?<span class="faq-icon"></span></button><div class="faq-a"><p class="muted">Call or WhatsApp us on +92 325 7766667 straight away. If you have facial swelling with fever or trouble breathing or swallowing, go to the nearest hospital emergency department.</p></div></div></div>
+      </div>
+    </section>
+
+    <!-- ============ BLOG PREVIEW ============ -->
+    <section class="section bg-cream">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h2" data-split><span class="line"><span>Everything about</span></span><span class="line"><span class="italic">oral health</span></span></h2>
+          <div class="about-copy" style="gap:20px">
+            <p class="text-lg muted" data-reveal>Explore expert dental tips, treatment guides and the latest insights to help you maintain a healthy, confident smile.</p>
+            <div data-reveal><a href="blog.html" class="btn btn--teal" data-roll><span class="btn-roll"><span>View All Articles</span><span>View All Articles</span></span><span class="btn-icon">↗</span></a></div>
+          </div>
+        </div>
+        <div class="posts-grid">
+          <a href="blog-post.html" class="post-card" data-reveal>
+            <span class="post-img"><img src="https://placehold.co/900x620/CEEA73/265C5C?text=Blog+Image" alt="" loading="lazy"><span class="post-cat">Oral Health</span></span>
+            <span class="post-meta">Mar 12, 2026 · 5 min read</span>
+            <strong class="h5">How often should you really see a dentist?</strong>
+            <span class="link-arrow">Read article <span>→</span></span>
+          </a>
+          <a href="blog-post.html" class="post-card" data-reveal>
+            <span class="post-img"><img src="https://placehold.co/900x620/EDEEE9/265C5C?text=Blog+Image" alt="" loading="lazy"><span class="post-cat">Cosmetic</span></span>
+            <span class="post-meta">Mar 4, 2026 · 6 min read</span>
+            <strong class="h5">Whitening at home vs. in the clinic</strong>
+            <span class="link-arrow">Read article <span>→</span></span>
+          </a>
+          <a href="blog-post.html" class="post-card" data-reveal>
+            <span class="post-img"><img src="https://placehold.co/900x620/265C5C/265C5C?text=Blog+Image" alt="" loading="lazy"><span class="post-cat">Oral Health</span></span>
+            <span class="post-meta">Jan 30, 2026 · 4 min read</span>
+            <strong class="h5">What to do when a tooth suddenly hurts</strong>
+            <span class="link-arrow">Read article <span>→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT + MAP ============ -->
+    <section class="section home-contact">
+      <div class="container home-contact-grid">
+        <div class="about-copy" style="align-content:start">
+          <span class="eyebrow" data-reveal>Contact</span>
+          <h2 class="h2" data-split><span class="line"><span>Get in touch</span></span><span class="line"><span class="italic">with us</span></span></h2>
+          <p class="text-lg muted" data-reveal>Have a question or ready to book? Reach us by phone, WhatsApp or email, or visit our clinic in DHA Rahbar.</p>
+          <div class="home-contact-cards" data-reveal>
+            <a class="info-card" href="tel:+923257766667"><span class="value-ico">☏</span><div><h3 class="h5">Call us</h3><p>+92 325 7766667</p></div></a>
+            <a class="info-card" href="mailto:contact@dentifydental.pk"><span class="value-ico">✉</span><div><h3 class="h5">Email</h3><p>contact@dentifydental.pk</p></div></a>
+            <div class="info-card"><span class="value-ico">⌖</span><div><h3 class="h5">Visit</h3><p class="muted">Commercial Plot 3, First Floor, Block 2P, DHA Rahbar Phase XI, Sector 2, Lahore</p></div></div>
+            <div class="info-card"><span class="value-ico">◷</span><div><h3 class="h5">Hours</h3><p class="muted">Mon–Sat · 10:00 am – 9:00 pm<br>Sunday · Closed</p></div></div>
+          </div>
+          <div data-reveal><a href="contact.html" class="btn btn--teal" data-roll><span class="btn-roll"><span>Book An Appointment</span><span>Book An Appointment</span></span><span class="btn-icon">↗</span></a></div>
+        </div>
+        <div class="home-map" data-reveal>
+          <iframe src="https://www.google.com/maps?q=Dentify+Dental,+Block+2P,+DHA+Rahbar+Phase+XI,+Sector+2,+Lahore&amp;output=embed" title="Dentify Dental on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
       </div>
     </section>
   
@@ -320,7 +428,7 @@
         <div data-reveal><a href="contact.html" class="btn" data-roll><span class="btn-roll"><span>Book Appointment</span><span>Book Appointment</span></span><span class="btn-icon">↗</span></a></div>
       </div>
       <div class="footer-cols">
-        <div><h5>Services</h5><ul><li><a href="service-preventive-dental-care.html">Preventive Dental Care</a></li><li><a href="service-cosmetic-dentistry.html">Cosmetic Dentistry</a></li><li><a href="service-orthodontics.html">Orthodontics</a></li><li><a href="service-surgical-dentistry.html">Surgical Dentistry</a></li><li><a href="service-kids-dentistry.html">Kids Dentistry</a></li><li><a href="service-teeth-whitening.html">Teeth Whitening</a></li><li><a href="service-veneers.html">Veneers</a></li><li><a href="service-dental-implants.html">Dental Implants</a></li><li><a href="service-crowns-prosthetics.html">Crowns & Prosthetics</a></li></ul></div>
+        <div><h5>Services</h5><ul><li><a href="service-preventive-dental-care.html">Preventive Dental Care</a></li><li><a href="service-cosmetic-dentistry.html">Cosmetic Dentistry</a></li><li><a href="service-root-canal.html">Root Canal Treatment</a></li><li><a href="service-orthodontics.html">Orthodontics</a></li><li><a href="service-crowns-prosthetics.html">Crowns & Prosthetics</a></li><li><a href="service-surgical-dentistry.html">Surgical Dentistry</a></li><li><a href="service-kids-dentistry.html">Kids Dentistry</a></li><li><a href="service-teeth-whitening.html">Teeth Whitening</a></li><li><a href="service-dental-implants.html">Dental Implants</a></li></ul></div>
         <div><h5>Clinic</h5><ul><li><a href="about.html">About us</a></li><li><a href="doctors.html">Our doctors</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
         <div><h5>Visit us</h5><ul><li>Commercial Plot 3, First Floor, Block 2P</li><li>DHA Rahbar Phase XI, Sector 2, Lahore</li><li><a href="tel:+923257766667">+92 325 7766667</a></li><li><a href="https://api.whatsapp.com/send/?phone=923257766667&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">WhatsApp us</a></li><li><a href="https://www.instagram.com/dentifydental.pk/" target="_blank" rel="noopener">Instagram</a></li><li><a href="mailto:contact@dentifydental.pk">contact@dentifydental.pk</a></li></ul></div>
         <div><h5>Hours</h5><ul><li>Mon–Sat · 10:00 am – 9:00 pm</li><li>Sunday · Closed</li></ul></div>

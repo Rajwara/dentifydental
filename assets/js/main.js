@@ -705,3 +705,28 @@ $$('.has-drop').forEach((wrap) => {
   };
   window.addEventListener('scroll', check, { passive: true });
 })();
+
+/* ===== Home quick booking: opens WhatsApp with the request filled in ===== */
+(() => {
+  const form = $('#quickBook');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = form.elements;
+    const name = f.name.value.trim();
+    const phoneOk = f.phone.checkValidity() && f.phone.value.trim();
+    f.name.classList.toggle('is-invalid', !name);
+    f.phone.classList.toggle('is-invalid', !phoneOk);
+    $('.qb-err', form).hidden = !!(name && phoneOk);
+    if (!name || !phoneOk) return (name ? f.phone : f.name).focus();
+    const lines = [
+      'Hello Dentify Dental, I would like to book an appointment.',
+      `Name: ${name}`,
+      `Phone: ${f.phone.value.trim()}`,
+      f.treatment.value && `Treatment: ${f.treatment.value}`,
+      f.date.value && `Preferred date: ${f.date.value}`,
+      f.time.value && `Preferred time: ${f.time.value}`,
+    ].filter(Boolean);
+    window.open('https://wa.me/923257766667?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+  });
+})();
