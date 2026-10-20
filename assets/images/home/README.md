@@ -2,7 +2,7 @@
 
 Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
 
-**Already in use:** `hero.webp` (main banner), `about-main.webp` and `about-detail.webp` (About section), and the six treatment card photos in `services-card/`.
+**Already in use:** `hero.webp` (main banner), `about-main.webp` and `about-detail.webp` (About section), `clinic-interior.webp` (Reasons to choose Dentify) and the six treatment card photos in `services-card/`.
 
 | Suggested file name | Size (px) | Placeholder label | Description |
 |---|---|---|---|
@@ -10,7 +10,6 @@ Put this page's photos in this folder (JPG or WebP). Use the suggested file name
 | `b.jpg` | 80 × 80 | B | — |
 | `c.jpg` | 80 × 80 | C | — |
 | `fa.jpg` | 120 × 120 | FA | — |
-| `clinic-interior.jpg` | 1000 × 1100 | Clinic Interior | Treatment room at Dentify Dental |
 | `before.jpg` | 1400 × 1000 | Before | Before treatment |
 | `after.jpg` | 1400 × 1000 | After | After treatment |
 | `p.jpg` | 112 × 112 | P | — |
