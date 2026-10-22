@@ -1,16 +1,12 @@
-# Images for: About Us — Dentify Dental (`about.html`)
+# Images for: About Us (`about.html`)
 
-Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
-
-| Suggested file name | Size (px) | Placeholder label | Description |
+| File | Where | Size | Status |
 |---|---|---|---|
-| `hero.jpg` | 1800 × 900 | About Hero Image | Inside the Dentify Dental clinic |
-| `fa.jpg` | 120 × 120 | FA | — |
-| `dr-farhan-ali.jpg` | 1000 × 1200 | Dr. Farhan Ali | Dr. Muhammad Farhan Ali, Orthodontic Specialist |
-| `detail-image.jpg` | 600 × 500 | Detail Image | — |
-| `before.jpg` | 1000 × 1000 | Before | Smile before treatment |
-| `after.jpg` | 1000 × 1000 | After | Smile after treatment |
-| `ak.jpg` | 112 × 112 | AK | — |
-| `clinic-photo-1.jpg` | 900 × 1100 | Clinic Photo 1 | — |
-| `clinic-photo-2.jpg` | 900 × 700 | Clinic Photo 2 | — |
-| `clinic-photo-3.jpg` | 900 × 1100 | Clinic Photo 3 | — |
+| `about-hero.webp` | Page banner at the top | 2400 × 1000 | ✅ In use |
+| `about-detail.webp` | Small corner image beside Dr. Farhan's portrait | 800 × 670 | ✅ In use |
+| `before.webp` / `after.webp` | Before/after slider next to the testimonial (AI-generated, labelled "Illustrative image") | 1200 × 1200 | ✅ In use |
+| `gallery-1.webp` | Gallery, left (portrait) | 900 × 1200 | ✅ In use |
+| `gallery-2.webp` | Gallery, middle (landscape) | 1200 × 900 | ✅ In use |
+| `gallery-3.webp` | Gallery, right (portrait) | 900 × 1200 | ✅ In use |
+
+Dr. Farhan's portrait comes from `assets/images/doctors/dr-muhammad-farhan-ali.webp`, and the service cards from `assets/images/home/services-card/`.

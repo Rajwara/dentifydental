@@ -1230,3 +1230,6 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
 .modal-img { background: linear-gradient(180deg, #F3F1EB 0%, #E4E7E0 100%); }
 .modal-img { object-position: center 18%; }
 .modal-img.is-placeholder { object-fit: contain; object-position: center bottom; }
+.testi-initials { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--teal); color: var(--lime); font: 500 18px/1 var(--f-body); letter-spacing: 1px; flex: none; }
+.page-hero-media img { object-position: center 55%; }
+.about-testi .ba img { object-position: center 45%; }
