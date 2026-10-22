@@ -334,6 +334,7 @@ $$('.newsletter-form').forEach((form) => {
     body.appendChild($('template', card).content.cloneNode(true));
     const src = $('.photo img', card);
     img.src = src.src; img.alt = src.alt;
+    img.classList.toggle('is-placeholder', src.classList.contains('is-placeholder'));
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     lockScroll(true);

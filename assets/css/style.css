@@ -1222,3 +1222,11 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
 .ba-wrap .h2 { font-size: clamp(48px, 5.2vw, 88px); line-height: 1.05; }
 .ba-note { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); padding: 4px 12px; border-radius: var(--pill); background: rgba(0,0,0,.45); color: #fff; font-size: 12px; pointer-events: none; }
 #ba img { object-position: center 45%; }
+
+/* Team photos: faces sit high in portraits; placeholders are transparent cut-outs */
+.team-card .photo img, .doc-card .photo img, .lead-doc img, .img-portrait { object-position: center 18%; }
+.team-card .photo, .doc-card .photo { background: linear-gradient(180deg, #F3F1EB 0%, #E4E7E0 100%); }
+.team-card .photo img.is-placeholder, .doc-card .photo img.is-placeholder { object-fit: contain; object-position: center bottom; }
+.modal-img { background: linear-gradient(180deg, #F3F1EB 0%, #E4E7E0 100%); }
+.modal-img { object-position: center 18%; }
+.modal-img.is-placeholder { object-fit: contain; object-position: center bottom; }

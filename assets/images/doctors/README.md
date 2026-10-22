@@ -1,13 +1,14 @@
-# Images for: Our Doctors — Dentify Dental (`doctors.html`)
+# Images for: Our Doctors (`doctors.html`, also the home page team cards and About page)
 
-Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
+Team photos: **1000 × 1250 px portrait (4:5)**, head and shoulders, face in the top third. WebP or JPG, under ~250 KB.
 
-| Suggested file name | Size (px) | Placeholder label | Description |
-|---|---|---|---|
-| `hero.jpg` | 1800 × 900 | Team Group Photo | The Dentify Dental team |
-| `dr-farhan-ali.jpg` | 700 × 900 | Dr. Farhan Ali | Dr. Muhammad Farhan Ali, Orthodontic Specialist |
-| `dr-affan-jabbar.jpg` | 700 × 900 | Dr. Affan Jabbar | Dr. Affan Jabbar, Dental Surgeon |
-| `dr-rafay-raza.jpg` | 700 × 900 | Dr. Rafay Raza | Dr. Rafay Raza, Dental Surgeon |
-| `talha-asad.jpg` | 700 × 900 | Talha Asad | Talha Asad, Dental Assistant |
-| `malik-sameer-ali.jpg` | 700 × 900 | Malik Sameer Ali | Malik Sameer Ali, Dental Assistant |
-| `sakina-batool-ali.jpg` | 700 × 900 | Sakina Batool Ali | Sakina Batool Ali, Practice Manager |
+| File | Who | Status |
+|---|---|---|
+| `dr-muhammad-farhan-ali.webp` | Dr. Muhammad Farhan Ali, Orthodontic Specialist | ✅ In use |
+| `dr-affan-jabbar.webp` | Dr. Affan Jabbar, Dental Surgeon | ✅ In use |
+| `dr-rafay-raza.webp` | Dr. Rafay Raza, Dental Surgeon | Using `placeholder-male.webp` |
+| `talha-asad.webp` | Talha Asad, Dental Assistant | Using `placeholder-male.webp` |
+| `malik-sameer-ali.webp` | Malik Sameer Ali, Dental Assistant | Using `placeholder-male.webp` |
+| `sakina-batool-ali.webp` | Sakina Batool Ali, Practice Manager | Using `placeholder-female.webp` |
+
+Upload a real photo with the name in the first column and it can replace the placeholder.
