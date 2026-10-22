@@ -1,9 +1,12 @@
-# Images for: Kids Dentistry — Dentify Dental (`service-kids-dentistry.html`)
+# Images for: Kids Dentistry (`service-kids-dentistry.html`)
 
-Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
-
-| Suggested file name | Size (px) | Placeholder label | Description |
+| File | Where | Size | Status |
 |---|---|---|---|
-| `hero.jpg` | 1800 × 900 | Service Hero Image | Kids Dentistry at Dentify Dental |
-| `before.jpg` | 1400 × 1000 | Before | Before treatment |
-| `after.jpg` | 1400 × 1000 | After | After treatment |
+| `hero.webp` | Top banner (people on the right, empty space on the left) | 2172 × 724 | Needed |
+| `first-visit.webp` | Treatment card 01 | 1000 × 1250 (4:5) | Needed |
+| `fluoride-varnish.webp` | Treatment card 02 | 1000 × 1250 (4:5) | Needed |
+| `fissure-sealants.webp` | Treatment card 03 | 1000 × 1250 (4:5) | Needed |
+| `gentle-fillings.webp` | Treatment card 04 | 1000 × 1250 (4:5) | Needed |
+| `before.webp` / `after.webp` | Before/after slider (labelled "Illustrative image") | 2000 × 1200 (5:3) | Needed |
+
+The tooth timeline and brushing timer are drawn in code and need no images.

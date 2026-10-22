@@ -1380,3 +1380,77 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
   .cmp-ico { width: 26px; height: 26px; font-size: 12px; }
 }
 @media (max-width: 767px) { .svc-hero-media--mid > img { object-position: 60% center; } }
+
+/* Smile milestones (kids dentistry page) */
+.miles { display: grid; gap: 28px; padding: 40px; border-radius: var(--radius); background: var(--cream); }
+.miles-head { display: grid; gap: 14px; max-width: 620px; }
+.miles-track { --progress: 0; position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.miles-track::before, .miles-track::after { content: ""; position: absolute; left: 10px; right: 10px; top: 10px; height: 3px; border-radius: 3px; }
+.miles-track::before { background: var(--teal-10); }
+.miles-track::after { background: var(--teal); transform-origin: left; transform: scaleX(var(--progress)); }
+.mile { position: relative; z-index: 1; display: grid; gap: 6px; align-content: start; padding-top: 34px; }
+.mile-dot { position: absolute; top: 0; left: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--white); border: 3px solid var(--teal-10); transition: background .35s, border-color .35s, transform .35s; }
+.mile.is-lit .mile-dot { background: var(--lime); border-color: var(--teal); transform: scale(1.15); }
+.mile-age { font: 400 26px/1.1 var(--f-display); }
+.mile strong { font-weight: 500; font-size: 15px; }
+.mile-text { font-size: 14px; line-height: 20px; opacity: .75; }
+@media (max-width: 1199px) { .miles-track { grid-template-columns: repeat(3, 1fr); row-gap: 30px; } .miles-track::before, .miles-track::after { display: none; } }
+@media (max-width: 767px) {
+  .miles { padding: 24px; }
+  .miles-track { grid-template-columns: 1fr; gap: 18px; padding-left: 34px; }
+  .miles-track::before, .miles-track::after { display: block; left: 10px; right: auto; top: 6px; bottom: 6px; width: 3px; height: auto; transform-origin: top; transform: scaleY(var(--progress)); }
+  .miles-track::before { transform: none; }
+  .mile { padding-top: 0; }
+  .mile-dot { left: -34px; }
+}
+
+/* Tooth timeline (kids page) */
+.ktl { --p: 0; display: grid; gap: 26px; padding: 40px; border-radius: var(--radius); background: var(--cream); }
+.ktl-head { display: grid; gap: 14px; max-width: 620px; }
+.ktl-list { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.ktl-list::before, .ktl-list::after { content: ""; position: absolute; top: 27px; left: 28px; right: 28px; height: 3px; border-radius: 3px; }
+.ktl-list::before { background: var(--teal-10); }
+.ktl-list::after { background: var(--teal); transform-origin: left; transform: scaleX(var(--p)); }
+.ktl-item { position: relative; z-index: 1; display: grid; gap: 14px; align-content: start; }
+.ktl-item > div { display: grid; gap: 6px; padding: 18px; border-radius: 18px; background: var(--white); min-height: 100%; }
+.ktl-dot { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--white); border: 3px solid var(--teal-10); transition: background .4s, border-color .4s, transform .4s; }
+.ktl-dot svg { width: 26px; height: 26px; fill: var(--white); stroke: var(--teal); stroke-width: 1.6; }
+.ktl-item.is-lit .ktl-dot { background: var(--lime); border-color: var(--teal); transform: scale(1.08); }
+.ktl-age { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; color: var(--teal); opacity: .7; }
+.ktl-item p { font-size: 14px; line-height: 20px; }
+@media (max-width: 1199px) {
+  .ktl-list { grid-template-columns: 1fr; gap: 14px; }
+  .ktl-list::before, .ktl-list::after { top: 28px; bottom: 28px; left: 26px; right: auto; width: 3px; height: auto; transform-origin: top; transform: scaleY(var(--p)); }
+  .ktl-item { grid-template-columns: 56px 1fr; gap: 16px; }
+}
+@media (max-width: 767px) { .ktl { padding: 24px; } }
+
+/* Brushing timer */
+.kbt { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding: 40px; border-radius: var(--radius); background: var(--teal); color: var(--cream); }
+.kbt-copy { display: grid; gap: 14px; }
+.kbt-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 6px; }
+.kbt .btn--teal { background: var(--lime); color: var(--teal); }
+.kbt .btn--teal .btn-icon { background: var(--teal); color: var(--lime); }
+.kbt-reset { background: none; border: 0; padding: 0; font: inherit; font-weight: 500; color: var(--cream); cursor: pointer; }
+.kbt-stage { position: relative; width: 100%; max-width: 300px; aspect-ratio: 1; margin: 0 auto; }
+.kbt-ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.kbt-track { fill: none; stroke: rgba(237,238,233,.15); stroke-width: 12; }
+.kbt-fill { fill: none; stroke: var(--lime); stroke-width: 12; stroke-linecap: round; stroke-dasharray: 603.2; stroke-dashoffset: 603.2; transition: stroke-dashoffset .25s linear; }
+.kbt-face { position: absolute; inset: 14%; display: grid; place-items: center; align-content: center; gap: 2px; border-radius: 50%; background: var(--white); color: var(--teal); text-align: center; padding: 10px; }
+.kbt-tooth { width: 54%; height: auto; }
+.kbt-tooth-body { fill: #F6F1E4; stroke: var(--teal); stroke-width: 3; transition: fill .4s; }
+.kbt-tooth circle { fill: var(--teal); }
+.kbt-mouth { fill: none; stroke: var(--teal); stroke-width: 3.5; stroke-linecap: round; }
+.kbt-shine path { fill: var(--lime); stroke: var(--teal); stroke-width: 1; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.kbt.is-running .kbt-tooth { animation: kbtWiggle .5s ease-in-out infinite alternate; }
+.kbt.is-done .kbt-tooth-body { fill: #FFFFFF; }
+.kbt.is-done .kbt-shine path { animation: shadeSpark 1.4s ease-in-out infinite; }
+.kbt.is-done .kbt-shine path:nth-child(2) { animation-delay: .5s; }
+@keyframes kbtWiggle { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+.kbt-time { font: 400 34px/1 var(--f-display); }
+.kbt-zone { font-size: 12px; line-height: 15px; opacity: .75; max-width: 120px; }
+@media (max-width: 1199px) { .kbt { grid-template-columns: 1fr; } }
+@media (max-width: 767px) { .kbt { padding: 24px; } .kbt-stage { max-width: 250px; } .kbt-time { font-size: 28px; } }
+@media (prefers-reduced-motion: reduce) { .kbt.is-running .kbt-tooth, .kbt.is-done .kbt-shine path { animation: none; } .kbt.is-done .kbt-shine path { opacity: 1; } }
+.ktl-item .h5 { font-size: 24px; line-height: 28px; }
+@media (max-width: 1199px) { .ktl-item .h5 { font-size: 28px; line-height: 32px; } }

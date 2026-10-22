@@ -931,3 +931,70 @@ $$('.has-drop').forEach((wrap) => {
     onEnter: () => gsap.to(icons, { scale: 1, duration: 0.4, ease: 'back.out(2.5)', stagger: 0.05, delay: 0.3 }),
   });
 })();
+
+/* ===== Smile milestones: track fills and milestones light up on scroll ===== */
+(() => {
+  const track = $('[data-miles] .miles-track');
+  if (!track) return;
+  const items = $$('.mile', track);
+  const set = (p) => {
+    track.style.setProperty('--progress', p.toFixed(3));
+    items.forEach((li, i) => li.classList.toggle('is-lit', p >= i / Math.max(items.length - 1, 1) - 0.02));
+  };
+  if (!animate) return set(1);
+  ScrollTrigger.create({ trigger: track, start: 'top 75%', end: 'bottom 55%', scrub: true, onUpdate: (s) => set(s.progress) });
+})();
+
+/* ===== Tooth timeline: the line fills and milestones light up as you scroll ===== */
+(() => {
+  const box = $('[data-ktl]');
+  if (!box) return;
+  const list = $('.ktl-list', box);
+  const items = $$('.ktl-item', box);
+  const light = (p) => {
+    list.style.setProperty('--p', p.toFixed(3));
+    items.forEach((li, i) => li.classList.toggle('is-lit', p >= i / Math.max(items.length - 1, 1) - 0.02));
+  };
+  if (!animate) return light(1);
+  ScrollTrigger.create({ trigger: list, start: 'top 75%', end: 'bottom 55%', scrub: true, onUpdate: (s) => light(s.progress) });
+})();
+
+/* ===== Two-minute brushing timer, with a prompt for each quarter of the mouth ===== */
+(() => {
+  const box = $('[data-kbt]');
+  if (!box) return;
+  const start = $('.kbt-start', box);
+  const startLabel = $$('.btn-roll span', start);
+  const reset = $('.kbt-reset', box);
+  const timeEl = $('.kbt-time', box);
+  const zoneEl = $('.kbt-zone', box);
+  const fill = $('.kbt-fill', box);
+  const TOTAL = 120, C = 2 * Math.PI * 96;
+  const zones = ['Top left teeth', 'Top right teeth', 'Bottom left teeth', 'Bottom right teeth'];
+  let left = TOTAL, timer = null;
+  const label = (t) => startLabel.forEach((s) => (s.textContent = t));
+  const draw = () => {
+    const m = Math.floor(left / 60), s = String(left % 60).padStart(2, '0');
+    timeEl.textContent = `${m}:${s}`;
+    fill.style.strokeDashoffset = C * (left / TOTAL);
+  };
+  const stop = () => { clearInterval(timer); timer = null; box.classList.remove('is-running'); };
+  const finish = () => { stop(); box.classList.add('is-done'); zoneEl.textContent = 'Great job! Sparkling clean!'; label('Brush again'); };
+  const tick = () => {
+    left -= 1; draw();
+    if (left <= 0) return finish();
+    zoneEl.textContent = 'Now: ' + zones[Math.min(3, Math.floor((TOTAL - left) / 30))];
+  };
+  start.addEventListener('click', () => {
+    if (timer) { stop(); label('Keep going'); zoneEl.textContent = 'Paused'; return; }
+    if (left <= 0) { left = TOTAL; box.classList.remove('is-done'); }
+    box.classList.add('is-running'); reset.hidden = false; label('Pause');
+    zoneEl.textContent = 'Now: ' + zones[Math.min(3, Math.floor((TOTAL - left) / 30))];
+    timer = setInterval(tick, 1000);
+  });
+  reset.addEventListener('click', () => {
+    stop(); left = TOTAL; box.classList.remove('is-done'); draw();
+    zoneEl.textContent = 'Ready when you are!'; label('Start brushing'); reset.hidden = true;
+  });
+  draw();
+})();
