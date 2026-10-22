@@ -1,14 +1,12 @@
-# Images for: Surgical Dentistry — Dentify Dental (`service-surgical-dentistry.html`)
+# Images for: Surgical Dentistry (`service-surgical-dentistry.html`)
 
-Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
-
-**Already in use:** `hero.webp` (top-of-page banner).
-
-| Suggested file name | Size (px) | Placeholder label | Description |
+| File | Where | Size | Status |
 |---|---|---|---|
-| `simple-tooth-extraction.jpg` | 900 × 1100 | Simple Tooth Extraction | Dentist explaining a simple tooth extraction to a patient |
-| `difficult-tooth-extraction.jpg` | 900 × 1100 | Difficult Tooth Extraction | Dentist performing a difficult tooth extraction |
-| `surgical-tooth-extraction.jpg` | 900 × 1100 | Surgical Tooth Extraction | Surgical tooth extraction in progress |
-| `paediatric-extraction.jpg` | 900 × 1100 | Paediatric Extraction | Child being reassured during a gentle dental extraction |
-| `before.jpg` | 1400 × 1000 | Before | Before treatment |
-| `after.jpg` | 1400 × 1000 | After | After treatment |
+| `hero.webp` | Top banner | 2172 × 724 | ✅ In use |
+| `simple-extraction.webp` | Treatment card 01 | 1000 × 1250 (4:5) | ✅ In use |
+| `difficult-extraction.webp` | Treatment card 02 | 1000 × 1250 (4:5) | ✅ In use |
+| `surgical-extraction.webp` | Treatment card 03 | 1000 × 1250 (4:5) | ✅ In use |
+| `paediatric-extraction.webp` | Treatment card 04 | 1000 × 1250 (4:5) | ✅ In use |
+| `before.webp` / `after.webp` | Before/after slider: broken tooth, then healed and replaced (labelled "Illustrative image") | 2000 × 1200 (5:3) | ✅ In use |
+
+The recovery guide slider is drawn in code and needs no image.

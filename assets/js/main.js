@@ -169,6 +169,7 @@ $$('.ba').forEach((ba) => {
     if (e.key === 'ArrowLeft') set(now - 5);
     if (e.key === 'ArrowRight') set(now + 5);
   });
+  if (ba.dataset.start) set(+ba.dataset.start); // optional start position, e.g. data-start="62"
 });
 
 /* ===== Testimonials slider ===== */
