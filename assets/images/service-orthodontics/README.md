@@ -1,14 +1,12 @@
-# Images for: Orthodontics — Dentify Dental (`service-orthodontics.html`)
+# Images for: Orthodontics (`service-orthodontics.html`)
 
-Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
-
-**Already in use:** `hero.webp` (top-of-page banner).
-
-| Suggested file name | Size (px) | Placeholder label | Description |
+| File | Where | Size | Status |
 |---|---|---|---|
-| `fixed-metal-braces.jpg` | 900 × 1100 | Fixed Metal Braces | Orthodontist discussing fixed metal braces with a patient |
-| `ceramic-braces.jpg` | 900 × 1100 | Ceramic Braces | Orthodontist fitting ceramic braces |
-| `clear-aligners.jpg` | 900 × 1100 | Clear Aligners | Clear aligner being checked during an appointment |
-| `removable-retainers.jpg` | 900 × 1100 | Removable Retainers | Patient being fitted with a removable retainer |
-| `before.jpg` | 1400 × 1000 | Before | Before treatment |
-| `after.jpg` | 1400 × 1000 | After | After treatment |
+| `hero.webp` | Top banner | 2172 × 724 | ✅ In use |
+| `fixed-metal-braces.webp` | Treatment card 01 | 1000 × 1250 (4:5) | ✅ In use |
+| `ceramic-braces.webp` | Treatment card 02 | 1000 × 1250 (4:5) | ✅ In use |
+| `clear-aligners.webp` | Treatment card 03 | 1000 × 1250 (4:5) | ✅ In use |
+| `removable-retainers.webp` | Treatment card 04 | 1000 × 1250 (4:5) | ✅ In use |
+| `before.webp` / `after.webp` | Before/after slider (AI-generated, labelled "Illustrative image") | 2000 × 1200 (5:3) | ✅ In use |
+
+The teeth-straightening animation is drawn in code and needs no image.
