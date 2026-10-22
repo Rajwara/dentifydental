@@ -7,3 +7,5 @@ Put this page's photos in this folder (JPG or WebP). Use the suggested file name
 | `offer-image.jpg` | 700 × 460 | Offer Image | — |
 | `logo.jpg` | 512 × 512 | Logo | Clinic logo (PNG or SVG, transparent background) |
 | `favicon.jpg` | 512 × 512 | Favicon | Square icon for the browser tab |
+
+**Already in use:** `offer.webp` ("Book a consultation & smile check" card in the Services menu, every page).

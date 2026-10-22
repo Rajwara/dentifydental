@@ -1505,3 +1505,7 @@ a.rating { color: inherit; text-decoration: none; }
   .nav.is-open .nav-links .nav-book { display: inline-flex; align-items: center; gap: 10px; justify-content: center; margin-top: 6px; padding: 14px 22px; border-radius: var(--pill); background: var(--lime); color: var(--teal); font-size: 18px; font-weight: 500; }
   .nav-links .nav-book::after { display: none; }
 }
+.mega-feature img { object-position: center 35%; }
+.author-mark { width: 48px; height: 48px; font-size: 15px; }
+.author-mark--lg { width: 120px; height: 120px; font: 400 40px/1 var(--f-display); flex: none; }
+@media (max-width: 767px) { .author-mark--lg { width: 80px; height: 80px; font-size: 28px; } }
