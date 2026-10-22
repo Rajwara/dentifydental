@@ -1379,3 +1379,4 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
   .cmp-table thead th { font-size: 15px; }
   .cmp-ico { width: 26px; height: 26px; font-size: 12px; }
 }
+@media (max-width: 767px) { .svc-hero-media--mid > img { object-position: 60% center; } }
