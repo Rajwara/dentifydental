@@ -11,6 +11,6 @@ Size: **1920 × 1080 px (16:9) minimum**, subject centred, no text in the image,
 | `clear-aligners.webp` | Are clear aligners right for you? | ✅ In use |
 | `crowns-veneers.webp` | Dental crowns and veneers for a natural smile | ✅ In use |
 | `extraction-aftercare.webp` | Tooth extraction: what to expect and aftercare | ✅ In use |
-| `childs-first-visit.webp` | Making your child's first visit a happy one | Placeholder |
-| `healthier-gums.webp` | 7 small habits for healthier gums | Placeholder |
-| `toothbrush-and-paste.webp` | Choosing the right toothbrush and paste | Placeholder |
+| `childs-first-visit.webp` | Making your child's first visit a happy one | ✅ In use |
+| `healthier-gums.webp` | 7 small habits for healthier gums | ✅ In use |
+| `toothbrush-and-paste.webp` | Choosing the right toothbrush and paste | ✅ In use |
