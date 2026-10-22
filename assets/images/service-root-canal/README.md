@@ -1,14 +1,12 @@
-# Images for: Root Canal Treatment — Dentify Dental (`service-root-canal.html`)
+# Images for: Root Canal Treatment (`service-root-canal.html`)
 
-Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
-
-**Already in use:** `hero.webp` (top-of-page banner).
-
-| Suggested file name | Size (px) | Placeholder label | Description |
+| File | Where | Size | Status |
 |---|---|---|---|
-| `root-canal-posterior.jpg` | 900 × 1100 | Root Canal – Posterior | Dentist explaining posterior root canal treatment to a patient |
-| `root-canal-anterior.jpg` | 900 × 1100 | Root Canal – Anterior | Dentist performing anterior root canal treatment |
-| `pulp-cap.jpg` | 900 × 1100 | Pulp Cap | Close-up of a pulp capping procedure |
-| `core-build-up.jpg` | 900 × 1100 | Core Build-Up | Dentist preparing a core build-up for a patient |
-| `before.jpg` | 1400 × 1000 | Before | Before treatment |
-| `after.jpg` | 1400 × 1000 | After | After treatment |
+| `hero.webp` | Top banner | 1983 × 793 | ✅ In use |
+| `root-canal-posterior.webp` | Treatment card 01 | 1000 × 1250 (4:5) | ✅ In use |
+| `root-canal-anterior.webp` | Treatment card 02 | 1000 × 1250 (4:5) | ✅ In use |
+| `pulp-cap.webp` | Treatment card 03 | 1000 × 1250 (4:5) | ✅ In use |
+| `core-build-up.webp` | Treatment card 04 | 1000 × 1250 (4:5) | ✅ In use |
+| `before.webp` / `after.webp` | Before/after slider: grey tooth restored (labelled "Illustrative image") | 2000 × 1200 (5:3) | ✅ In use |
+
+The "Inside your tooth" diagram is drawn in code and needs no image.
