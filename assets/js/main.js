@@ -998,3 +998,32 @@ $$('.has-drop').forEach((wrap) => {
   });
   draw();
 })();
+
+/* ===== Emergency first aid: choose a problem to see what to do now ===== */
+(() => {
+  const box = $('[data-aid-box]');
+  if (!box) return;
+  const data = JSON.parse(box.dataset.aidBox);
+  const chips = $$('[data-aid]', box);
+  const card = $('.aid-card', box);
+  const ol = $('[data-aid-steps]', box);
+  const render = (i) => {
+    const d = data[i];
+    $('[data-aid-title]', box).textContent = d.name;
+    $('[data-aid-note]', box).textContent = d.note;
+    ol.replaceChildren(...d.steps.map((s) => {
+      const li = document.createElement('li');
+      li.textContent = s;
+      if (/hospital/i.test(s)) li.classList.add('is-warn');
+      return li;
+    }));
+    if (animate) gsap.from($$('li', ol), { opacity: 0, x: -14, duration: 0.4, stagger: 0.07, ease: 'power2.out' });
+  };
+  chips.forEach((c) => c.addEventListener('click', () => {
+    chips.forEach((x) => { x.classList.toggle('is-active', x === c); x.setAttribute('aria-pressed', x === c); });
+    const i = +c.dataset.aid;
+    if (animate) gsap.to(card, { opacity: 0, y: 8, duration: 0.15, overwrite: true, onComplete: () => { render(i); gsap.to(card, { opacity: 1, y: 0, duration: 0.3 }); } });
+    else render(i);
+  }));
+  render(0);
+})();
