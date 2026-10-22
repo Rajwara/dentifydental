@@ -7,7 +7,6 @@ Open `index.html` in a browser. All files must stay in the same folder.
 |---|---|
 | index.html | Home |
 | about.html | About us |
-| services.html | All services (with category filter) |
 | service-*.html | Single service pages (6 clinic treatments + 6 extra) |
 | doctors.html | Doctors (click a card for the profile pop-up) |
 | pricing.html | Membership plans (monthly/yearly toggle) + treatment prices |
@@ -30,7 +29,7 @@ clinic-website/
                           each folder's README.md lists the photos that page needs
 ```
 
-Menu: Home · About · Services (mega menu, 9 services + All services) · Doctors · Blog · Contact · Pages (dropdown listing every page).
+Menu: Home · About · Services (mega menu) · Doctors · Pricing · Blog, plus the Book a Visit button (contact page). Careers, Terms and Privacy are linked from the footer.
 
 ## Still to fill in
 Search the project for `[FILL` to find every spot that needs real clinic information (doctor names & qualifications, treatment prices in PKR, membership plan amounts, Google rating, patient reviews, clinic history, payment methods). Also confirm the counters on the home and about pages (years, patients, specialists, % recommend).

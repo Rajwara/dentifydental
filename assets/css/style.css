@@ -1498,3 +1498,10 @@ a.rating { color: inherit; text-decoration: none; }
 .g-badge strong { font: 400 24px/1 var(--f-display); margin-right: 4px; }
 .g-badge small { display: block; font-size: 13px; opacity: .75; }
 .g-badge .rating-g { width: 38px; height: 38px; }
+
+/* "Book a Visit" inside the mobile menu (the header button is hidden on small screens) */
+.nav-links .nav-book { display: none; }
+@media (max-width: 991px) {
+  .nav.is-open .nav-links .nav-book { display: inline-flex; align-items: center; gap: 10px; justify-content: center; margin-top: 6px; padding: 14px 22px; border-radius: var(--pill); background: var(--lime); color: var(--teal); font-size: 18px; font-weight: 500; }
+  .nav-links .nav-book::after { display: none; }
+}
