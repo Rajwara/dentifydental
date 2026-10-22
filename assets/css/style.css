@@ -1220,3 +1220,5 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
 /* Before/after section: keep the long heading from squeezing the slider */
 @media (min-width: 992px) { .ba-wrap { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); } }
 .ba-wrap .h2 { font-size: clamp(48px, 5.2vw, 88px); line-height: 1.05; }
+.ba-note { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); padding: 4px 12px; border-radius: var(--pill); background: rgba(0,0,0,.45); color: #fff; font-size: 12px; pointer-events: none; }
+#ba img { object-position: center 45%; }
