@@ -21,3 +21,6 @@ Put this page's photos in this folder (JPG or WebP). Use the suggested file name
 | `blog-image-1.jpg` | 900 × 620 | Blog Image | — |
 | `blog-image-2.jpg` | 900 × 620 | Blog Image | — |
 | `blog-image-3.jpg` | 900 × 620 | Blog Image | — |
+
+
+**Before/after slider (Results section):** two photos, `before.webp` and `after.webp`, each **1600 × 1000 px**, taken from the same angle and distance with the teeth centred. The frame is 620 px tall and changes width with the screen, so the sides may be trimmed.
