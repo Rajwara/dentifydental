@@ -1262,3 +1262,4 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
 .shade-foot { display: flex; align-items: center; justify-content: center; gap: 22px; }
 .shade-foot .shade-badge { position: static; }
 .shade-stage svg { margin-top: 6px; }
+@media (max-width: 767px) { .svc-hero-media--right > img { object-position: 88% center; } }
