@@ -1,14 +1,12 @@
-# Images for: Crowns & Prosthetics — Dentify Dental (`service-crowns-prosthetics.html`)
+# Images for: Crowns & Prosthetics (`service-crowns-prosthetics.html`)
 
-Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
-
-**Already in use:** `hero.webp` (top-of-page banner).
-
-| Suggested file name | Size (px) | Placeholder label | Description |
+| File | Where | Size | Status |
 |---|---|---|---|
-| `zirconia-crown.jpg` | 900 × 1100 | Zirconia Crown | Dentist discussing a zirconia crown with a patient |
-| `zirconia-veneer.jpg` | 900 × 1100 | Zirconia Veneer | Dentist preparing a zirconia veneer |
-| `e-max-crown.jpg` | 900 × 1100 | E-Max Crown | E-Max crown being fitted |
-| `e-max-veneer.jpg` | 900 × 1100 | E-Max Veneer | Patient smiling after E-Max veneers |
-| `before.jpg` | 1400 × 1000 | Before | Before treatment |
-| `after.jpg` | 1400 × 1000 | After | After treatment |
+| `hero.webp` | Top banner | 2172 × 724 | ✅ In use |
+| `zirconia-crown.webp` | Treatment card 01 | 1000 × 1250 (4:5) | ✅ In use |
+| `zirconia-veneer.webp` | Treatment card 02 | 1000 × 1250 (4:5) | ✅ In use |
+| `emax-crown.webp` | Treatment card 03 | 1000 × 1250 (4:5) | ✅ In use |
+| `emax-veneer.webp` | Treatment card 04 | 1000 × 1250 (4:5) | ✅ In use |
+| `before.webp` / `after.webp` | Before/after slider: cracked, filled tooth restored with a crown (labelled "Illustrative image") | 2000 × 1200 (5:3) | ✅ In use |
+
+The Zirconia vs E-Max comparison is drawn in code and needs no image.
