@@ -1,16 +1,16 @@
-# Images for: Blog — Dentify Dental (`blog.html`)
+# Blog images
 
-Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
+One image per article, used for its card, the featured spot and the article banner.
+Size: **1920 × 1080 px (16:9) minimum**, subject centred, no text in the image, WebP under ~350 KB.
 
-| Suggested file name | Size (px) | Placeholder label | Description |
-|---|---|---|---|
-| `featured-blog-image.jpg` | 1400 × 900 | Featured Blog Image | — |
-| `a.jpg` | 96 × 96 | A | — |
-| `blog-image-1.jpg` | 900 × 620 | Blog Image | — |
-| `blog-image-2.jpg` | 900 × 620 | Blog Image | — |
-| `blog-image-3.jpg` | 900 × 620 | Blog Image | — |
-| `blog-image-4.jpg` | 900 × 620 | Blog Image | — |
-| `blog-image-5.jpg` | 900 × 620 | Blog Image | — |
-| `blog-image-6.jpg` | 900 × 620 | Blog Image | — |
-| `blog-image-7.jpg` | 900 × 620 | Blog Image | — |
-| `blog-image-8.jpg` | 900 × 620 | Blog Image | — |
+| File | Article | Status |
+|---|---|---|
+| `regular-checkups.webp` | How often should you really see a dentist? (featured + article banner) | ✅ In use |
+| `whitening-home-vs-clinic.webp` | Whitening at home vs. in the clinic | ✅ In use |
+| `root-canal-guide.webp` | What you should know about root canal treatment | ✅ In use |
+| `clear-aligners.webp` | Are clear aligners right for you? | ✅ In use |
+| `crowns-veneers.webp` | Dental crowns and veneers for a natural smile | ✅ In use |
+| `extraction-aftercare.webp` | Tooth extraction: what to expect and aftercare | ✅ In use |
+| `childs-first-visit.webp` | Making your child's first visit a happy one | Placeholder |
+| `healthier-gums.webp` | 7 small habits for healthier gums | Placeholder |
+| `toothbrush-and-paste.webp` | Choosing the right toothbrush and paste | Placeholder |
