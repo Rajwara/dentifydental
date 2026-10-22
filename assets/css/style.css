@@ -1263,3 +1263,42 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
 .shade-foot .shade-badge { position: static; }
 .shade-stage svg { margin-top: 6px; }
 @media (max-width: 767px) { .svc-hero-media--right > img { object-position: 88% center; } }
+
+/* How a veneer fits (veneers page) */
+.vfit { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding: 40px; border-radius: var(--radius); background: var(--cream); }
+.vfit-copy { display: grid; gap: 14px; }
+.vfit-steps { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
+.vfit-steps li { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-radius: 14px; font-size: 15px; line-height: 21px; opacity: .45; transition: opacity .35s, background .35s; }
+.vfit-steps li span { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid currentColor; font-size: 12px; transition: background .35s, color .35s, border-color .35s; }
+.vfit-steps li.is-on { opacity: 1; background: var(--white); }
+.vfit-steps li.is-on span { background: var(--teal); border-color: var(--teal); color: var(--lime); }
+.vfit-stage { position: relative; padding: 20px; border-radius: 20px; background: radial-gradient(90% 80% at 60% 50%, #FFFFFF, #F1EEE6); }
+.vfit-stage svg { width: 100%; height: auto; max-height: 440px; overflow: visible; display: block; margin: 0 auto; }
+.vfit-gum { fill: #EBA7A7; opacity: .82; }
+.vfit-tooth { fill: #F6F1E4; stroke: rgba(38,92,92,.45); stroke-width: 2; }
+.vfit-sliver { fill: #DCC086; }
+.vfit-prep { fill: none; stroke: var(--teal); stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0; }
+.vfit-veneer { fill: #FFFFFF; stroke: var(--teal); stroke-width: 1.5; opacity: 0; filter: drop-shadow(0 4px 10px rgba(38,92,92,.18)); }
+.vfit.is-bonded .vfit-veneer { stroke: #A9C94F; animation: vfitGlow 1.8s ease-in-out infinite; }
+@keyframes vfitGlow { 50% { filter: drop-shadow(0 0 10px rgba(206,234,115,.95)); } }
+.vfit-spark path { fill: var(--lime); stroke: var(--teal); stroke-width: 1; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.vfit.is-bonded .vfit-spark path { animation: shadeSpark 1.6s ease-in-out infinite; }
+.vfit-label line { stroke: var(--teal); stroke-width: 1; }
+.vfit-label text { fill: var(--teal); }
+.vfit-label--prep, .vfit-label--veneer { opacity: 0; }
+.vfit-tag { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); padding: 6px 16px; border-radius: var(--pill); background: var(--teal); color: var(--lime); font-size: 14px; white-space: nowrap; }
+
+/* Find your fix */
+.fixfinder { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px; border-radius: var(--radius); background: var(--teal); color: var(--cream); align-items: center; }
+.fixfinder-head { display: grid; gap: 14px; }
+.fixfinder-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.fix-chip { padding: 10px 18px; border-radius: var(--pill); border: 1px solid rgba(237,238,233,.35); background: transparent; color: var(--cream); font: 500 15px/20px var(--f-body); cursor: pointer; transition: background .3s, color .3s, border-color .3s, transform .2s; }
+.fix-chip:hover { border-color: var(--lime); transform: translateY(-2px); }
+.fix-chip.is-active { background: var(--lime); border-color: var(--lime); color: var(--teal); }
+.fix-chip:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+.fixfinder-result { display: grid; gap: 14px; align-content: start; padding: 32px; border-radius: 20px; background: var(--white); color: var(--teal); min-height: 280px; }
+.fixfinder-result .mat-tag { justify-self: start; }
+.fixfinder-result .link-arrow { justify-self: start; margin-top: 4px; }
+@media (max-width: 1199px) { .vfit, .fixfinder { grid-template-columns: 1fr; } .vfit-stage svg { max-height: 380px; } }
+@media (max-width: 767px) { .vfit, .fixfinder { padding: 24px; } .fixfinder-result { padding: 24px; min-height: 0; } }
+@media (prefers-reduced-motion: reduce) { .vfit.is-bonded .vfit-veneer, .vfit.is-bonded .vfit-spark path { animation: none; } .vfit.is-bonded .vfit-spark path { opacity: 1; } }

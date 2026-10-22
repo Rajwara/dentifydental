@@ -766,3 +766,61 @@ $$('.has-drop').forEach((wrap) => {
     });
   }
 })();
+
+/* ===== How a veneer fits: scroll walks through prep, placement and bonding ===== */
+(() => {
+  const box = $('[data-vfit]');
+  if (!box) return;
+  const steps = $$('.vfit-steps li', box);
+  const tag = $('[data-vfit-label]', box);
+  const names = ['Natural tooth', 'Gentle preparation', 'Veneer placed', 'Bonded & polished'];
+  const q = (s) => $(s, box);
+  const setStep = (i) => {
+    steps.forEach((li, k) => li.classList.toggle('is-on', k <= i));
+    tag.textContent = names[i];
+    box.classList.toggle('is-bonded', i === 3);
+  };
+  if (!animate) {
+    ['.vfit-veneer', '.vfit-label--veneer', '.vfit-prep'].forEach((s) => (q(s).style.opacity = 1));
+    q('.vfit-sliver').style.opacity = 0; q('.vfit-label--enamel').style.opacity = 0;
+    return setStep(3);
+  }
+  setStep(0);
+  const tl = gsap.timeline({
+    scrollTrigger: { trigger: box, start: 'top 70%', end: 'bottom 45%', scrub: 0.6 },
+    onUpdate: () => setStep(Math.min(3, Math.floor(tl.progress() * 4))),
+  });
+  tl.to(q('.vfit-sliver'), { opacity: 0, duration: 1 }, 0.4)
+    .to(q('.vfit-label--enamel'), { opacity: 0, duration: 0.5 }, 0.4)
+    .to(q('.vfit-prep'), { opacity: 1, duration: 0.6 }, 0.8)
+    .to(q('.vfit-label--prep'), { opacity: 1, duration: 0.5 }, 0.9)
+    .fromTo(q('.vfit-veneer'), { opacity: 0, x: -70 }, { opacity: 1, x: 0, duration: 1.2, ease: 'power2.out' }, 1.8)
+    .to(q('.vfit-label--prep'), { opacity: 0, duration: 0.4 }, 2.2)
+    .to(q('.vfit-label--veneer'), { opacity: 1, duration: 0.5 }, 2.6)
+    .to({}, { duration: 1 });
+})();
+
+/* ===== Find your fix: concern chips swap the recommended treatment ===== */
+(() => {
+  const box = $('[data-fixfinder]');
+  if (!box) return;
+  const data = JSON.parse($('[data-fix-data]', box).textContent);
+  const chips = $$('.fix-chip', box);
+  const card = $('.fixfinder-result', box);
+  const link = $('[data-fix-link]', box);
+  const render = (i) => {
+    const d = data[i];
+    $('[data-fix-tag]', box).textContent = d.tag;
+    $('[data-fix-title]', box).textContent = d.title;
+    $('[data-fix-text]', box).textContent = d.text;
+    link.href = d.link;
+    link.firstChild.textContent = d.label + ' ';
+  };
+  chips.forEach((c) => c.addEventListener('click', () => {
+    chips.forEach((x) => { x.classList.toggle('is-active', x === c); x.setAttribute('aria-pressed', x === c); });
+    const i = +c.dataset.fix;
+    if (animate) gsap.to(card, { opacity: 0, y: 10, duration: 0.15, overwrite: true, onComplete: () => { render(i); gsap.to(card, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }); } });
+    else render(i);
+  }));
+  render(0);
+})();
