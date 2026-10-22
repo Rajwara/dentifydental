@@ -1562,3 +1562,5 @@ a.rating { color: inherit; text-decoration: none; }
   .footer-col ul { font-size: 14px; }
   .footer-mark { margin-bottom: -.12em; }
 }
+.footer-bottom { padding-bottom: 32px; }
+@media (max-width: 767px) { .footer-bottom { padding-bottom: 96px; } }
