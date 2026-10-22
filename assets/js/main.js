@@ -824,3 +824,63 @@ $$('.has-drop').forEach((wrap) => {
   }));
   render(0);
 })();
+
+/* ===== Wear clock: the day's wear arcs draw in and the hours count up ===== */
+(() => {
+  const box = $('[data-wear]');
+  if (!box) return;
+  const arcs = $$('.wear-arc', box);
+  const gaps = $$('.wear-gap, .wear-label', box);
+  const count = $('[data-wear-count]', box);
+  if (!animate) { count.textContent = 22; return; }
+  arcs.forEach((p) => { const l = p.getTotalLength(); gsap.set(p, { strokeDasharray: l, strokeDashoffset: l }); });
+  gsap.set(gaps, { opacity: 0 });
+  const obj = { v: 0 };
+  gsap.timeline({ scrollTrigger: { trigger: box, start: 'top 70%', once: true } })
+    .to(arcs, { strokeDashoffset: 0, duration: 0.8, ease: 'none', stagger: 0.8 }, 0)
+    .to(obj, { v: 22, duration: 2.4, ease: 'none', onUpdate: () => (count.textContent = Math.round(obj.v)) }, 0)
+    .to(gaps, { opacity: 1, duration: 0.4, stagger: 0.12 }, 2.2);
+})();
+
+/* ===== Aligner candidate quiz: three answers give a general recommendation ===== */
+(() => {
+  const box = $('[data-quiz]');
+  if (!box) return;
+  const qs = $$('.quiz-q', box);
+  const result = $('.quiz-result', box);
+  const answers = {};
+  const outcome = () => {
+    if (answers.health === 'no') return ['First step', "Let's get your teeth healthy first", 'Any decay or gum problems are treated before straightening begins. Once your mouth is healthy, we can plan aligners or braces with you.'];
+    if (answers.fit === 'no') return ['Worth discussing', 'Fixed braces may suit you better', 'More complex bite problems are often treated more predictably with braces. Come in for an assessment and we will explain every option.'];
+    if (answers.wear === 'no') return ['Worth discussing', 'Fixed braces may be easier for you', "Aligners only work when they're worn 20–22 hours a day. Braces work around the clock without you having to remember them."];
+    return ['Good sign', 'You may be a great candidate for clear aligners', 'Your answers suggest aligners could work well for you. Book an assessment and digital scan to confirm and see your expected result.'];
+  };
+  const update = () => {
+    const done = qs.every((q) => answers[q.dataset.q]);
+    if (!done) return;
+    const [tag, title, text] = outcome();
+    $('[data-quiz-tag]', box).textContent = tag;
+    $('[data-quiz-title]', box).textContent = title;
+    $('[data-quiz-text]', box).textContent = text;
+    const first = result.hidden;
+    result.hidden = false;
+    if (animate) gsap.fromTo(result, { opacity: 0, y: first ? 16 : 6 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', overwrite: true, onComplete: () => ScrollTrigger.refresh() });
+  };
+  qs.forEach((q) => {
+    const btns = $$('button', q);
+    btns.forEach((b) => {
+      b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', () => {
+        btns.forEach((x) => x.setAttribute('aria-pressed', x === b));
+        answers[q.dataset.q] = b.dataset.v;
+        update();
+      });
+    });
+  });
+  $('.quiz-reset', box).addEventListener('click', () => {
+    Object.keys(answers).forEach((k) => delete answers[k]);
+    $$('.quiz-a button', box).forEach((b) => b.setAttribute('aria-pressed', 'false'));
+    result.hidden = true;
+    $('.quiz-a button', box).focus();
+  });
+})();

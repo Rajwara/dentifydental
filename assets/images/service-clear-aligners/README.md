@@ -1,9 +1,12 @@
-# Images for: Clear Aligners — Dentify Dental (`service-clear-aligners.html`)
+# Images for: Clear Aligners (`service-clear-aligners.html`)
 
-Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
-
-| Suggested file name | Size (px) | Placeholder label | Description |
+| File | Where | Size | Status |
 |---|---|---|---|
-| `hero.jpg` | 1800 × 900 | Service Hero Image | Clear Aligners at Dentify Dental |
-| `before.jpg` | 1400 × 1000 | Before | Before treatment |
-| `after.jpg` | 1400 × 1000 | After | After treatment |
+| `hero.webp` | Top banner (people on the right, empty space on the left) | 2172 × 724 | Needed |
+| `custom-aligners.webp` | Treatment card 01 | 1000 × 1250 (4:5) | Needed |
+| `digital-scan.webp` | Treatment card 02 | 1000 × 1250 (4:5) | Needed |
+| `progress-checkins.webp` | Treatment card 03 | 1000 × 1250 (4:5) | Needed |
+| `retainers.webp` | Treatment card 04 | 1000 × 1250 (4:5) | Needed |
+| `before.webp` / `after.webp` | Before/after slider (labelled "Illustrative image") | 2000 × 1200 (5:3) | Needed |
+
+The wear clock, candidate quiz and aligners vs braces comparison are drawn in code and need no images.
