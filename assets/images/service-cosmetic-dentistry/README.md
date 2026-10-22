@@ -1,14 +1,10 @@
-# Images for: Cosmetic Dentistry — Dentify Dental (`service-cosmetic-dentistry.html`)
+# Images for: Cosmetic Dentistry (`service-cosmetic-dentistry.html`)
 
-Put this page's photos in this folder (JPG or WebP). Use the suggested file names and roughly these sizes, then they can be linked into the page.
-
-**Already in use:** `hero.webp` (top-of-page banner).
-
-| Suggested file name | Size (px) | Placeholder label | Description |
+| File | Where | Size | Status |
 |---|---|---|---|
-| `teeth-whitening.jpg` | 900 × 1100 | Teeth Whitening | Dentist discussing teeth whitening with a patient |
-| `composite-bonding.jpg` | 900 × 1100 | Composite Bonding | Dentist applying composite bonding to a tooth |
-| `smile-enhancement.jpg` | 900 × 1100 | Smile Enhancement | Smile enhancement treatment in progress |
-| `aesthetic-treatments.jpg` | 900 × 1100 | Aesthetic Treatments | Patient smiling during an aesthetic dental treatment |
-| `before.jpg` | 1400 × 1000 | Before | Smile before cosmetic treatment |
-| `after.jpg` | 1400 × 1000 | After | Smile after cosmetic treatment |
+| `hero.webp` | Top banner | 2172 × 724 | ✅ In use |
+| `teeth-whitening.webp` | Treatment card 01 | 1000 × 1250 (4:5) | ✅ In use |
+| `composite-bonding.webp` | Treatment card 02 | 1000 × 1250 (4:5) | ✅ In use |
+| `smile-enhancement.webp` | Treatment card 03 | 1000 × 1250 (4:5) | ✅ In use |
+| `aesthetic-treatments.webp` | Treatment card 04 | 1000 × 1250 (4:5) | ✅ In use |
+| `before.webp` / `after.webp` | Before/after slider (AI-generated, labelled "Illustrative image") | 2000 × 1200 (5:3) | ✅ In use |
