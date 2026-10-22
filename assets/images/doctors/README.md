@@ -4,6 +4,7 @@ Team photos: **1000 × 1250 px portrait (4:5)**, head and shoulders, face in the
 
 | File | Who | Status |
 |---|---|---|
+| `hero.webp` | Page banner (2400 × 1000) | ✅ In use |
 | `dr-muhammad-farhan-ali.webp` | Dr. Muhammad Farhan Ali, Orthodontic Specialist | ✅ In use |
 | `dr-affan-jabbar.webp` | Dr. Affan Jabbar, Dental Surgeon | ✅ In use |
 | `dr-rafay-raza.webp` | Dr. Rafay Raza, Dental Surgeon | Using `placeholder-male.webp` |
