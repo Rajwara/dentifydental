@@ -1509,3 +1509,7 @@ a.rating { color: inherit; text-decoration: none; }
 .author-mark { width: 48px; height: 48px; font-size: 15px; }
 .author-mark--lg { width: 120px; height: 120px; font: 400 40px/1 var(--f-display); flex: none; }
 @media (max-width: 767px) { .author-mark--lg { width: 80px; height: 80px; font-size: 28px; } }
+
+/* Brand logo */
+.logo img { display: block; height: 52px; width: auto; }
+@media (max-width: 767px) { .logo img { height: 42px; } }
