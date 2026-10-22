@@ -1454,3 +1454,5 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
 @media (prefers-reduced-motion: reduce) { .kbt.is-running .kbt-tooth, .kbt.is-done .kbt-shine path { animation: none; } .kbt.is-done .kbt-shine path { opacity: 1; } }
 .ktl-item .h5 { font-size: 24px; line-height: 28px; }
 @media (max-width: 1199px) { .ktl-item .h5 { font-size: 28px; line-height: 32px; } }
+.svc-hero-media--edge > img { object-position: 100% center; }
+@media (max-width: 767px) { .svc-hero-media--edge > img { object-position: 84% center; } }
