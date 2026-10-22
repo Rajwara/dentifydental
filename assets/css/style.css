@@ -1235,3 +1235,30 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
 .about-testi .ba img { object-position: center 45%; }
 .tx-card img { object-position: center 25%; }
 .svc-ba img { object-position: center 50%; }
+
+/* Shade journey (teeth whitening page) */
+.shade-demo { --tooth: #E3C98F; display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; padding: 40px; border-radius: var(--radius); background: var(--teal); color: var(--cream); overflow: hidden; }
+.shade-copy { display: grid; gap: 14px; }
+.shade-range { margin-top: 6px; }
+.shade-note { opacity: .65; }
+.shade-stage { position: relative; display: grid; gap: 22px; padding: 30px 24px 26px; border-radius: 20px; background: radial-gradient(80% 90% at 50% 40%, #FBF8F1, #EFE9DC); }
+.shade-stage svg { width: 100%; height: auto; overflow: visible; }
+.shade-gum { fill: #E9A4A4; opacity: .9; }
+.shade-teeth path { fill: var(--tooth); stroke: rgba(120, 90, 40, .25); stroke-width: 1.5; transition: fill .15s linear; }
+.shade-sparkles path { fill: #fff; opacity: 0; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 4px rgba(255,255,255,.9)); }
+.shade-demo.is-bright .shade-sparkles path { animation: shadeSpark 1.6s ease-in-out infinite; }
+.shade-demo.is-bright .shade-sparkles path:nth-child(2) { animation-delay: .4s; }
+.shade-demo.is-bright .shade-sparkles path:nth-child(3) { animation-delay: .8s; }
+@keyframes shadeSpark { 0%, 100% { opacity: 0; transform: scale(.4) rotate(0); } 50% { opacity: 1; transform: scale(1.1) rotate(45deg); } }
+.shade-badge { position: absolute; top: 16px; right: 16px; display: grid; justify-items: center; padding: 8px 14px; border-radius: 14px; background: var(--teal); color: var(--lime); line-height: 1.1; }
+.shade-badge span { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--cream); opacity: .7; }
+.shade-badge strong { font: 400 26px/1 var(--f-display); }
+.shade-guide { display: flex; justify-content: center; gap: 8px; }
+.shade-guide i { width: 26px; height: 40px; border-radius: 6px 6px 12px 12px; background: var(--c); box-shadow: inset 0 0 0 1px rgba(120,90,40,.18); transition: transform .3s; }
+.shade-guide i.is-on { transform: translateY(-6px); box-shadow: inset 0 0 0 1px rgba(120,90,40,.18), 0 0 0 2px var(--teal); }
+@media (max-width: 1199px) { .shade-demo { grid-template-columns: 1fr; } }
+@media (max-width: 767px) { .shade-demo { padding: 24px; } .shade-stage { padding: 24px 12px 20px; } .shade-guide i { width: 20px; height: 32px; } }
+@media (prefers-reduced-motion: reduce) { .shade-demo.is-bright .shade-sparkles path { animation: none; opacity: 1; } }
+.shade-foot { display: flex; align-items: center; justify-content: center; gap: 22px; }
+.shade-foot .shade-badge { position: static; }
+.shade-stage svg { margin-top: 6px; }

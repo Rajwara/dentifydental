@@ -731,3 +731,38 @@ $$('.has-drop').forEach((wrap) => {
     window.open('https://wa.me/923257766667?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
   });
 })();
+
+/* ===== Shade journey: slider (and a one-time scroll animation) brightens the teeth ===== */
+(() => {
+  const box = $('[data-shade]');
+  if (!box) return;
+  const input = $('input[type="range"]', box);
+  const name = $('[data-shade-name]', box);
+  const chips = $$('.shade-guide i', box);
+  const stops = ['#E3C98F', '#EAD5A6', '#F0E1BF', '#F5ECD6', '#FAF6EC'];
+  const labels = ['A3.5', 'A3', 'A2', 'A1', 'B1'];
+  const hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const mix = (a, b, t) => 'rgb(' + hex(a).map((v, i) => Math.round(v + (hex(b)[i] - v) * t)).join(',') + ')';
+  const set = (v) => {
+    const p = (v / 100) * (stops.length - 1);
+    const i = Math.min(Math.floor(p), stops.length - 2);
+    box.style.setProperty('--tooth', mix(stops[i], stops[i + 1], p - i));
+    const idx = Math.round(p);
+    name.textContent = labels[idx];
+    chips.forEach((c, k) => c.classList.toggle('is-on', k === idx));
+    input.style.setProperty('--fill', v + '%');
+    input.setAttribute('aria-valuetext', 'Shade ' + labels[idx]);
+    box.classList.toggle('is-bright', v >= 90);
+  };
+  let touched = false;
+  input.addEventListener('input', () => { touched = true; set(+input.value); });
+  set(0);
+  if (animate) {
+    const obj = { v: 0 };
+    ScrollTrigger.create({
+      trigger: box, start: 'top 65%', once: true,
+      onEnter: () => gsap.to(obj, { v: 100, duration: 2.6, ease: 'power2.inOut', delay: 0.3,
+        onUpdate: () => { if (touched) return; input.value = obj.v; set(obj.v); } }),
+    });
+  }
+})();
