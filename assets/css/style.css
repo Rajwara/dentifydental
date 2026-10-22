@@ -1336,3 +1336,46 @@ body.nl-open .wa-float { opacity: 0; pointer-events: none; }
 .quiz-reset { background: none; border: 0; padding: 0; font: inherit; font-weight: 500; color: var(--teal); cursor: pointer; }
 @media (max-width: 1199px) { .wear, .quiz { grid-template-columns: 1fr; } }
 @media (max-width: 767px) { .wear, .quiz { padding: 24px; } .quiz-body { padding: 20px; } .wear-center strong { font-size: 32px; } }
+
+/* Implant assembly (dental implants page) */
+.impl-bone { fill: #EADCBD; }
+.impl-bone-dots circle { fill: #D6C49C; }
+.impl-heal { fill: none; stroke: var(--lime); stroke-width: 6; opacity: 0; filter: blur(2px); }
+.impl-post-body { fill: #B9C2C4; stroke: #7E8A8D; stroke-width: 1.5; }
+.impl-thread { stroke: #7E8A8D; stroke-width: 2; stroke-linecap: round; }
+.impl-gum { fill: #EBA7A7; opacity: .92; }
+.impl-abut { fill: #D3D9DA; stroke: #7E8A8D; stroke-width: 1.5; }
+.impl-crown { fill: #FBF8F0; stroke: rgba(38,92,92,.45); stroke-width: 2; filter: drop-shadow(0 4px 10px rgba(38,92,92,.15)); }
+.impl.is-done .impl-crown { animation: vfitGlow 1.8s ease-in-out infinite; }
+
+/* Implant / bridge / denture comparison */
+.cmp { display: grid; gap: 22px; padding: 40px; border-radius: var(--radius); background: var(--teal); color: var(--cream); }
+.cmp-head { display: grid; gap: 14px; max-width: 620px; }
+.cmp-wrap { overflow-x: auto; border-radius: 20px; background: var(--white); color: var(--teal); }
+.cmp-table { width: 100%; border-collapse: collapse; min-width: 520px; }
+.cmp-table th, .cmp-table td { padding: 16px 18px; text-align: center; border-bottom: 1px solid var(--teal-10); }
+.cmp-table tbody tr:last-child th, .cmp-table tbody tr:last-child td { border-bottom: 0; }
+.cmp-table thead th { font: 400 24px/1.1 var(--f-display); padding-top: 22px; }
+.cmp-table tbody th { text-align: left; font-weight: 400; font-size: 15px; line-height: 21px; }
+.cmp-table .cmp-hl, .cmp-table td:nth-child(2) { background: rgba(206,234,115,.22); }
+.cmp-ico { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; font-weight: 700; }
+.cmp-y { background: var(--teal); color: var(--lime); }
+.cmp-p { background: var(--lime); color: var(--teal); }
+.cmp-n { background: var(--teal-10); color: rgba(38,92,92,.6); }
+.cmp-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; opacity: .85; }
+.cmp-legend .cmp-ico { width: 22px; height: 22px; font-size: 11px; }
+.cmp-legend a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 767px) { .cmp { padding: 24px; } .cmp-table th, .cmp-table td { padding: 12px 10px; } .cmp-table thead th { font-size: 19px; } .cmp-table tbody th { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { .impl.is-done .impl-crown { animation: none; } }
+.cmp-p { font-size: 18px; }
+.cmp-legend .cmp-y { background: var(--lime); color: var(--teal); }
+.cmp-legend .cmp-p { background: transparent; color: var(--lime); box-shadow: inset 0 0 0 1.5px var(--lime); font-size: 14px; }
+.cmp-legend .cmp-n { background: rgba(237,238,233,.18); color: var(--cream); }
+@media (max-width: 767px) {
+  .cmp-table { min-width: 0; table-layout: fixed; }
+  .cmp-table th:first-child { width: 44%; }
+  .cmp-table th, .cmp-table td { padding: 12px 4px; }
+  .cmp-table tbody th { padding-left: 14px; font-size: 13px; line-height: 18px; }
+  .cmp-table thead th { font-size: 15px; }
+  .cmp-ico { width: 26px; height: 26px; font-size: 12px; }
+}

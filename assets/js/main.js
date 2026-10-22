@@ -885,3 +885,49 @@ $$('.has-drop').forEach((wrap) => {
     $('.quiz-a button', box).focus();
   });
 })();
+
+/* ===== Implant assembly: post, healing, abutment and crown come together on scroll ===== */
+(() => {
+  const box = $('[data-implant]');
+  if (!box) return;
+  const q = (s) => $(s, box);
+  const steps = $$('.vfit-steps li', box);
+  const tag = $('[data-impl-label]', box);
+  const names = ['Implant placed', 'Bone bonding', 'Abutment attached', 'Crown fitted'];
+  const setStep = (i) => {
+    steps.forEach((li, k) => li.classList.toggle('is-on', k <= i));
+    tag.textContent = names[i];
+    box.classList.toggle('is-done', i === 3);
+  };
+  if (!animate) return setStep(3);
+  gsap.set(q('.impl-post'), { y: -150, opacity: 0 });
+  gsap.set(q('.impl-abut'), { y: -110, opacity: 0 });
+  gsap.set(q('.impl-crown'), { y: -120, opacity: 0 });
+  gsap.set([q('.impl-l-crown'), q('.impl-l-abut'), q('.impl-l-post')], { opacity: 0 });
+  setStep(0);
+  const tl = gsap.timeline({
+    scrollTrigger: { trigger: box, start: 'top 70%', end: 'bottom 45%', scrub: 0.6 },
+    onUpdate: () => setStep(Math.min(3, Math.floor(tl.progress() * 4))),
+  });
+  tl.to(q('.impl-post'), { y: 0, opacity: 1, duration: 1, ease: 'power2.out' }, 0)
+    .to(q('.impl-l-post'), { opacity: 1, duration: 0.3 }, 0.7)
+    .to(q('.impl-heal'), { opacity: 0.9, duration: 0.6 }, 1.1)
+    .to(q('.impl-heal'), { opacity: 0, duration: 0.5 }, 1.8)
+    .to(q('.impl-abut'), { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }, 2)
+    .to(q('.impl-l-abut'), { opacity: 1, duration: 0.3 }, 2.6)
+    .to(q('.impl-crown'), { y: 0, opacity: 1, duration: 0.9, ease: 'power2.out' }, 3)
+    .to(q('.impl-l-crown'), { opacity: 1, duration: 0.3 }, 3.7)
+    .to({}, { duration: 0.6 });
+})();
+
+/* ===== Comparison table: ticks pop in row by row ===== */
+(() => {
+  const box = $('[data-cmp]');
+  if (!box || !animate) return;
+  const icons = $$('tbody .cmp-ico', box);
+  gsap.set(icons, { scale: 0 });
+  ScrollTrigger.create({
+    trigger: box, start: 'top 70%', once: true,
+    onEnter: () => gsap.to(icons, { scale: 1, duration: 0.4, ease: 'back.out(2.5)', stagger: 0.05, delay: 0.3 }),
+  });
+})();
