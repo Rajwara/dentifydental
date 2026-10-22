@@ -481,15 +481,17 @@ $$('.has-drop').forEach((wrap) => {
   }
 
   // "Open now" badge, based on clinic hours in Lahore (Mon–Sat, 10:00–21:00)
-  const status = $('[data-open-status]');
-  if (status) {
+  const statuses = $$('[data-open-status]');
+  if (statuses.length) {
     const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Karachi', weekday: 'short', hour: 'numeric', hour12: false })
       .formatToParts(new Date());
     const day = parts.find((p) => p.type === 'weekday').value;
     const hour = +parts.find((p) => p.type === 'hour').value;
     const open = day !== 'Sun' && hour >= 10 && hour < 21;
-    status.classList.toggle('is-open', open);
-    $('.open-text', status).textContent = open ? 'Open now · until 9 pm' : 'Closed now · Mon–Sat 10 am – 9 pm';
+    statuses.forEach((status) => {
+      status.classList.toggle('is-open', open);
+      $('.open-text', status).textContent = open ? 'Open now · until 9 pm' : 'Closed now · Mon–Sat 10 am – 9 pm';
+    });
   }
 })();
 
